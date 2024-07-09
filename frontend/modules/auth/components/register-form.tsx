@@ -33,8 +33,8 @@ const RegisterForm = () => {
 
   return (
     <div className="flex flex-col h-screen items-center justify-center">
-      <div className="mb-10 w-2/3">
-        <h1 className="text-3xl font-bold text-start">Crear una cuenta</h1>
+      <div className="mb-10 w-full">
+        <h1 className="text-3xl font-bold ">Crear una cuenta</h1>
       </div>
       <Form {...form}>
         <form
@@ -49,7 +49,7 @@ const RegisterForm = () => {
                 <FormLabel>Nombre y apellido</FormLabel>
                 <FormControl>
                   <Input
-                    className="bg-muted"
+                    className="bg-muted "
                     placeholder="Escribe tu nombre y apellido"
                     type="name"
                     {...field}
@@ -106,19 +106,21 @@ const RegisterForm = () => {
             name="terms"
             render={({ field }) => (
               <FormItem className="flex items-center space-x-3 ">
-                <FormControl>
-                  <input
-                    type="checkbox"
-                    className="form-checkbox"
-                    checked={field.value}
-                    onChange={(e) => field.onChange(e.target.checked)}
-                  />
-                </FormControl>
-                <p className="text-xs text-foreground">
-                  Al crear la cuenta se aceptan los{' '}
-                  <strong>términos y condiciones</strong> y nuestra{' '}
-                  <strong>política de privacidad</strong>.
-                </p>
+                <div className="flex items-center space-x-2">
+                  <FormControl>
+                    <input
+                      type="checkbox"
+                      className="form-checkbox"
+                      checked={field.value}
+                      onChange={(e) => field.onChange(e.target.checked)}
+                    />
+                  </FormControl>
+                  <p className="text-xs text-foreground">
+                    Al crear la cuenta se aceptan los{' '}
+                    <strong>términos y condiciones</strong> y nuestra{' '}
+                    <strong>política de privacidad</strong>.
+                  </p>
+                </div>
                 <FormMessage />
               </FormItem>
             )}

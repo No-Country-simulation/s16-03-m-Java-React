@@ -20,9 +20,6 @@ const FormLayout = ({ children }: Props) => {
             Crea tu landing page profesional en minutos.
           </h1>
           <div>
-            <h1 className="mb-4 text-4xl font-extrabold">
-              Crea tu landing page profesional en minutos.
-            </h1>
             <p className="text-xl mt-20">
               Haz <span className="font-bold">crecer tu negocio</span> y{' '}
               <span className="font-bold">multiplica tus ventas</span> e
