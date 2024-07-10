@@ -1,3 +1,15 @@
-com\NoCountry\s16_03_m_Java_React\domain\entities\User.class
+com\NoCountry\s16_03_m_Java_React\application\security\SecurityConfig.class
+com\NoCountry\s16_03_m_Java_React\application\dto\users\CreateDtoUser.class
+com\NoCountry\s16_03_m_Java_React\application\implementations\AuthenticationServiceImpl.class
+com\NoCountry\s16_03_m_Java_React\application\dto\users\ReadDtoUser.class
+com\NoCountry\s16_03_m_Java_React\infrastructure\controllers\UsersController.class
+com\NoCountry\s16_03_m_Java_React\application\mapper\UsersMapperImpl.class
+com\NoCountry\s16_03_m_Java_React\application\implementations\UsersServiceImpl.class
+com\NoCountry\s16_03_m_Java_React\application\security\AuthenticationConfig.class
 com\NoCountry\s16_03_m_Java_React\S1603MJavaReactApplication.class
-com\NoCountry\s16_03_m_Java_React\domain\repository\UserRepository.class
+com\NoCountry\s16_03_m_Java_React\application\dto\login\RequestLogin.class
+com\NoCountry\s16_03_m_Java_React\application\mapper\UsersMapper.class
+com\NoCountry\s16_03_m_Java_React\domain\services\UsersService.class
+com\NoCountry\s16_03_m_Java_React\application\dto\login\ResponseLogin.class
+com\NoCountry\s16_03_m_Java_React\domain\services\AuthenticationService.class
+com\NoCountry\s16_03_m_Java_React\infrastructure\controllers\LoginController.class
