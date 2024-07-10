@@ -16,10 +16,10 @@ public class Users {
     private String id;
     @Column(unique = true)
     private String email;
-    private String userName;
     private String name;
     private String lastName;
     private Long phoneNumber;
     private String password;
-    private Long creditCard;
+    private String username;
+    private String credit_card;
 }

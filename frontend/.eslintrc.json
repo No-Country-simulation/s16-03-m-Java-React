@@ -8,8 +8,7 @@
     "plugin:react/recommended",
     "plugin:prettier/recommended",
     "plugin:import/errors",
-    "plugin:import/warnings",
-    "plugin:@typescript-eslint/recommended"
+    "plugin:import/warnings"
   ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
@@ -19,7 +18,7 @@
     "ecmaVersion": "latest",
     "sourceType": "module"
   },
-  "plugins": ["react", "@typescript-eslint", "import"],
+  "plugins": ["react", "import"],
   "rules": {
     "react/react-in-jsx-scope": "off",
     "react/no-unescaped-entities": 0,
@@ -27,10 +26,11 @@
     "prettier/prettier": [
       "error",
       {
-        "semi": true,
         "singleQuote": false,
         "endOfLine": "auto",
-        "useTabs": true
+        "printWidth": 80,
+        "tabWidth": 2,
+        "semi": true
       }
     ],
     "import/order": [
@@ -52,7 +52,6 @@
         }
       }
     ],
-    "@typescript-eslint/no-explicit-any": ["off"],
     "react/display-name": "off"
   }
 }
