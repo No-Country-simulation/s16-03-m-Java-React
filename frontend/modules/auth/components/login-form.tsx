@@ -29,27 +29,50 @@ const LoginForm = () => {
   }
 
   return (
-    <div>
+    <div className="flex h-screen items-center justify-center">
       <Form {...form}>
         <form
           onSubmit={form.handleSubmit(onSubmit)}
-          className="w-2/3 space-y-6"
+          className="w-2/3 space-y-6 bg-"
         >
           <FormField
             control={form.control}
             name="email"
             render={({ field }) => (
-              <FormItem>
-                <FormLabel>Email</FormLabel>
-                <FormControl>
-                  <Input placeholder="shadcn" type="email" {...field} />
-                </FormControl>
+              <>
+                <FormItem>
+                  <FormLabel>E-mail</FormLabel>
+                  <FormControl>
+                    <Input
+                      placeholder="Escribe tu e-mail"
+                      type="email"
+                      {...field}
+                    />
+                  </FormControl>
 
-                <FormMessage />
-              </FormItem>
+                  <FormMessage />
+                </FormItem>
+
+                <FormItem>
+                  <FormLabel>Password</FormLabel>
+                  <FormControl>
+                    <Input
+                      placeholder="Escribe tu contraseña"
+                      type="email"
+                      {...field}
+                    />
+                  </FormControl>
+
+                  <FormMessage />
+                </FormItem>
+              </>
             )}
           />
-          <Button type="submit">Submit</Button>
+          <div className="flex justify-center">
+            <Button type="submit" className="rounded-full mx-auto ">
+              Ingresar
+            </Button>
+          </div>
         </form>
       </Form>
     </div>
