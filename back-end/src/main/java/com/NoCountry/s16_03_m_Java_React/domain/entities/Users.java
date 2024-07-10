@@ -9,15 +9,17 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class User {
+public class Users {
 
     @Id
     @GeneratedValue( strategy = GenerationType.UUID)
     private String id;
     @Column(unique = true)
     private String email;
+    private String userName;
     private String name;
     private String lastName;
     private Long phoneNumber;
     private String password;
+    private Long creditCard;
 }
