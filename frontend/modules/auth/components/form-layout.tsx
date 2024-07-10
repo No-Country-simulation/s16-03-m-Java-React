@@ -1,6 +1,9 @@
 'use client'
 
 import { ReactNode } from 'react'
+import Logo from '@/public/images/Logo.png'
+import WebWave from '@/public/images/WebWave.png'
+import FormImage from '@/public/images/form-image.png'
 import Image from 'next/image'
 
 type Props = {
@@ -12,8 +15,8 @@ const FormLayout = ({ children }: Props) => {
     <section className="flex  bg-primary">
       <div className="flex flex-col justify-between w-1/2 p-8 text-destructive-foreground">
         <div className="flex items-center mb-8 space-x-4">
-          <Image src="/logo.png" alt="Logo" width={50} height={50} />
-          <Image src="/WebWave.png" alt="Logo" width={100} height={50} />
+          <Image src={Logo} alt="Logo" width={50} height={50} />
+          <Image src={WebWave} alt="Logo" width={100} height={50} />
         </div>
         <div className="w-2/2 mx-auto text-start p-8">
           <h1 className="mb-4 text-5xl font-extrabold ">
@@ -31,7 +34,7 @@ const FormLayout = ({ children }: Props) => {
         <div className="mt-8 ">
           <Image
             className="items-center mx-auto"
-            src="/form-image.png"
+            src={FormImage}
             alt="Image form"
             width={600}
             height={600}

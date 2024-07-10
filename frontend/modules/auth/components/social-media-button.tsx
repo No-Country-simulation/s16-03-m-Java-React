@@ -1,8 +1,10 @@
 'use client'
 
 import { FC } from 'react'
-import { Instagram, Facebook, Apple } from 'lucide-react'
+
 import { Button } from '@/components/ui/button'
+import { Apple, Facebook, Instagram } from 'lucide-react'
+import { Icon } from '@/components/ui/icon'
 
 const SocialMediaButtons: FC = () => {
   return (
@@ -16,15 +18,16 @@ const SocialMediaButtons: FC = () => {
           <span className="bg-white px-2">o ingresa con</span>
         </p>
       </div>
-      <div className="flex justify-center space-x-4 mt-4 ">
-        <Button variant="outline" className="rounded-full p-3 shadow">
-          <Instagram className="w-6 h-6 text-secondary-foreground" />
+      <div className="flex justify-center space-x-8 mt-4 ">
+        <Button variant="outline" size="icon" className="rounded-full w-[52px] h-[52px] shadow">
+          <Icon name="ic_google"/>
+
         </Button>
-        <Button variant="outline" className="rounded-full p-3 shadow">
-          <Apple className="w-6 h-6 text-secondary-foreground" />
+        <Button variant="outline" size="icon"  className="rounded-full w-[52px] h-[52px] shadow">
+           <Icon name="ic_mac"/>
         </Button>
-        <Button variant="outline" className="rounded-full p-3 shadow  ">
-          <Facebook className="w-6 h-6 text-secondary-foreground" />
+        <Button variant="outline" size="icon"  className="rounded-full w-[52px] h-[52px] shadow  ">
+            <Icon name="ic_facebook"/>
         </Button>
       </div>
     </div>

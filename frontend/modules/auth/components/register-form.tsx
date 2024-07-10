@@ -16,6 +16,7 @@ import {
 import { Input } from '@/components/ui/input'
 import { Button } from '@/components/ui/button'
 import SocialMediaButtons from './social-media-button'
+import { Checkbox } from '@/components/ui/checkbox'
 
 const RegisterForm = () => {
   const form = useForm<z.infer<typeof RegisterSchema>>({
@@ -32,7 +33,7 @@ const RegisterForm = () => {
   }
 
   return (
-    <div className="flex flex-col h-screen items-center justify-center">
+    <div className="flex flex-col max-w-[424px] px-4 lg:px-0 items-center justify-center">
       <div className="mb-10 w-full">
         <h1 className="text-3xl font-bold ">Crear una cuenta</h1>
       </div>
@@ -105,21 +106,22 @@ const RegisterForm = () => {
             control={form.control}
             name="terms"
             render={({ field }) => (
-              <FormItem className="flex items-center space-x-3 ">
+              <FormItem className="flex flex-col space-x-3 ">
                 <div className="flex items-center space-x-2">
                   <FormControl>
-                    <input
-                      type="checkbox"
-                      className="form-checkbox"
-                      checked={field.value}
-                      onChange={(e) => field.onChange(e.target.checked)}
-                    />
-                  </FormControl>
-                  <p className="text-xs text-foreground">
-                    Al crear la cuenta se aceptan los{' '}
+                    <div className="flex items-start space-x-2">
+      <Checkbox id="terms2" />
+      <label
+        htmlFor="terms2"
+        className="text-sm font-medium leading-tight peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+      >
+       Al crear la cuenta se aceptan los{' '}
                     <strong>términos y condiciones</strong> y nuestra{' '}
                     <strong>política de privacidad</strong>.
-                  </p>
+      </label>
+    </div>
+                  </FormControl>
+
                 </div>
                 <FormMessage />
               </FormItem>
