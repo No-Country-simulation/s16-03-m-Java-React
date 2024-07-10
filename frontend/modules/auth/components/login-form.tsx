@@ -1,10 +1,10 @@
-'use client'
+"use client";
 
-import { zodResolver } from '@hookform/resolvers/zod'
+import { zodResolver } from "@hookform/resolvers/zod";
 
-import { LoginSchema } from '../schemas'
-import { useForm } from 'react-hook-form'
-import { z } from 'zod'
+import { LoginSchema } from "../schemas";
+import { useForm } from "react-hook-form";
+import { z } from "zod";
 import {
   Form,
   FormControl,
@@ -12,20 +12,20 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from '@/components/ui/form'
-import { Input } from '@/components/ui/input'
-import { Button } from '@/components/ui/button'
+} from "@/components/ui/form";
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
 
 const LoginForm = () => {
   const form = useForm<z.infer<typeof LoginSchema>>({
     resolver: zodResolver(LoginSchema),
     defaultValues: {
-      email: '',
+      email: "",
     },
-  })
+  });
 
   function onSubmit(data: z.infer<typeof LoginSchema>) {
-    console.log(data)
+    console.log(data);
   }
 
   return (
@@ -33,7 +33,7 @@ const LoginForm = () => {
       <Form {...form}>
         <form
           onSubmit={form.handleSubmit(onSubmit)}
-          className="w-2/3 space-y-6 bg-"
+          className="bg- w-2/3 space-y-6"
         >
           <FormField
             control={form.control}
@@ -69,14 +69,14 @@ const LoginForm = () => {
             )}
           />
           <div className="flex justify-center">
-            <Button type="submit" className="rounded-full mx-auto ">
+            <Button type="submit" className="mx-auto rounded-full ">
               Ingresar
             </Button>
           </div>
         </form>
       </Form>
     </div>
-  )
-}
+  );
+};
 
-export default LoginForm
+export default LoginForm;

@@ -1,22 +1,22 @@
-import { FC } from 'react';
+import { FC } from "react";
 
-import Facebook from './icons/facebook.svg';
-import Mac from './icons/mac.svg';
-import Google from './icons/google.svg';
+import Facebook from "./icons/facebook.svg";
+import Mac from "./icons/mac.svg";
+import Google from "./icons/google.svg";
 
 export const iconTypes = {
   ic_facebook: {
     component: Facebook,
-    alt: 'Facebook',
+    alt: "Facebook",
   },
   ic_mac: {
     component: Mac,
-    alt: 'Mac',
+    alt: "Mac",
   },
   ic_google: {
     component: Google,
-    alt: 'Google',
-  }
+    alt: "Google",
+  },
 };
 
 export type IconNames = keyof typeof iconTypes;

@@ -1,10 +1,10 @@
-'use client'
+"use client";
 
-import { zodResolver } from '@hookform/resolvers/zod'
+import { zodResolver } from "@hookform/resolvers/zod";
 
-import { RegisterSchema } from '@/modules/auth/schemas/register-schema'
-import { useForm } from 'react-hook-form'
-import { z } from 'zod'
+import { RegisterSchema } from "@/modules/auth/schemas/register-schema";
+import { useForm } from "react-hook-form";
+import { z } from "zod";
 import {
   Form,
   FormControl,
@@ -12,28 +12,28 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from '@/components/ui/form'
-import { Input } from '@/components/ui/input'
-import { Button } from '@/components/ui/button'
-import SocialMediaButtons from './social-media-button'
-import { Checkbox } from '@/components/ui/checkbox'
+} from "@/components/ui/form";
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
+import SocialMediaButtons from "./social-media-button";
+import { Checkbox } from "@/components/ui/checkbox";
 
 const RegisterForm = () => {
   const form = useForm<z.infer<typeof RegisterSchema>>({
     resolver: zodResolver(RegisterSchema),
     defaultValues: {
-      email: '',
-      password: '',
+      email: "",
+      password: "",
       terms: false,
     },
-  })
+  });
 
   function onSubmit(data: z.infer<typeof RegisterSchema>) {
-    console.log(data)
+    console.log(data);
   }
 
   return (
-    <div className="flex flex-col max-w-[424px] px-4 lg:px-0 items-center justify-center">
+    <div className="flex max-w-[424px] flex-col items-center justify-center px-4 lg:px-0">
       <div className="mb-10 w-full">
         <h1 className="text-3xl font-bold ">Crear una cuenta</h1>
       </div>
@@ -93,7 +93,7 @@ const RegisterForm = () => {
                     {...field}
                   />
                 </FormControl>
-                <p className=" text-xs font-light text-muted-foreground">
+                <p className=" text-muted-foreground text-xs font-light">
                   Debe tener mas de 8 carácteres
                 </p>
 
@@ -110,18 +110,17 @@ const RegisterForm = () => {
                 <div className="flex items-center space-x-2">
                   <FormControl>
                     <div className="flex items-start space-x-2">
-      <Checkbox id="terms2" />
-      <label
-        htmlFor="terms2"
-        className="text-sm font-medium leading-tight peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-      >
-       Al crear la cuenta se aceptan los{' '}
-                    <strong>términos y condiciones</strong> y nuestra{' '}
-                    <strong>política de privacidad</strong>.
-      </label>
-    </div>
+                      <Checkbox id="terms2" />
+                      <label
+                        htmlFor="terms2"
+                        className="text-sm font-medium leading-tight peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                      >
+                        Al crear la cuenta se aceptan los{" "}
+                        <strong>términos y condiciones</strong> y nuestra{" "}
+                        <strong>política de privacidad</strong>.
+                      </label>
+                    </div>
                   </FormControl>
-
                 </div>
                 <FormMessage />
               </FormItem>
@@ -129,19 +128,19 @@ const RegisterForm = () => {
           />
 
           <div className="flex justify-center">
-            <Button type="submit" className="rounded-full mx-auto w-full">
+            <Button type="submit" className="mx-auto w-full rounded-full">
               Registrarme
             </Button>
           </div>
         </form>
       </Form>
       <SocialMediaButtons />
-      <p className="text-sm text-foreground mt-10">
-        Ya tenes una cuenta?{' '}
+      <p className="text-foreground mt-10 text-sm">
+        Ya tenes una cuenta?{" "}
         <strong className="text-secondary-foreground">Ingresa ahora</strong>.
       </p>
     </div>
-  )
-}
+  );
+};
 
-export default RegisterForm
+export default RegisterForm;
