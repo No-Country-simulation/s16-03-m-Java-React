@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class User {
+public class Users {
 
     @Id
     @GeneratedValue( strategy = GenerationType.UUID)
@@ -20,4 +20,6 @@ public class User {
     private String lastName;
     private Long phoneNumber;
     private String password;
+    private String username;
+    private String credit_card;
 }
