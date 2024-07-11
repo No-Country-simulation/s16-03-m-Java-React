@@ -1,8 +1,8 @@
 import { FC } from "react";
 
 import Facebook from "./icons/facebook.svg";
-import Mac from "./icons/mac.svg";
 import Google from "./icons/google.svg";
+import Mac from "./icons/mac.svg";
 
 export const iconTypes = {
   ic_facebook: {

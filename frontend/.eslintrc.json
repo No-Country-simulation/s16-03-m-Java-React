@@ -8,9 +8,19 @@
     "plugin:react/recommended",
     "plugin:prettier/recommended",
     "plugin:import/errors",
-    "plugin:import/warnings"
+    "plugin:import/warnings",
+    "plugin:@next/next/recommended"
   ],
   "parser": "@typescript-eslint/parser",
+  "overrides": [
+      {
+        "files": ["**/components/ui/*.tsx"],
+        "rules": {
+          "react/prop-types": [2, { "ignore": ["className"] }],
+          "react-refresh/only-export-components": "off"
+        }
+      }
+    ],
   "parserOptions": {
     "ecmaFeatures": {
       "jsx": true
