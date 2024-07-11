@@ -20,6 +20,7 @@ public class Users {
     private String lastName;
     private Long phoneNumber;
     private String password;
-    private String username;
+    private String userName;
     private String credit_card;
+    private Boolean active;
 }
