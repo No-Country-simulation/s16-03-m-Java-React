@@ -29,7 +29,7 @@ public class AuthenticationServiceImpl implements AuthenticationService {
         var user = usersRepository.findByEmail(data.email());
         if(user.isPresent()){
             id = user.get().getId();
-            userName = user.get().getUserName();
+            userName = user.get().getUsername();
             name = user.get().getName();
             lastName = user.get().getLastName();
         } else throw new EntityNotFoundException("No se puede encontrar el usuario con el email " + data.email());
