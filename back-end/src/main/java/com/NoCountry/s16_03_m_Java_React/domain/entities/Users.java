@@ -21,6 +21,6 @@ public class Users {
     private Long phoneNumber;
     private String password;
     private String userName;
-    private String credit_card;
+
     private Boolean active;
 }
