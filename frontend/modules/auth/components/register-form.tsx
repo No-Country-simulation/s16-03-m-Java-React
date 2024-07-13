@@ -1,10 +1,13 @@
 "use client";
 
 import { zodResolver } from "@hookform/resolvers/zod";
-
-import { RegisterSchema } from "@/modules/auth/schemas/register-schema";
+import Link from "next/link";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
+
+import SocialMediaButtons from "./social-media-button";
+import { Button } from "@/components/ui/button";
+import { Checkbox } from "@/components/ui/checkbox";
 import {
   Form,
   FormControl,
@@ -14,10 +17,7 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
-import SocialMediaButtons from "./social-media-button";
-import { Checkbox } from "@/components/ui/checkbox";
-import Link from "next/link";
+import { RegisterSchema } from "@/modules/auth/schemas/register-schema";
 
 const RegisterForm = () => {
   const form = useForm<z.infer<typeof RegisterSchema>>({

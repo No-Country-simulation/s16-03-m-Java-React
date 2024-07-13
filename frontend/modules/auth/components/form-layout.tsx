@@ -1,9 +1,11 @@
 "use client";
 
 import { ReactNode } from "react";
-import Logo from "@/public/images/Logo.png";
-import FormImage from "@/public/images/form-image.png";
+
 import Image from "next/image";
+
+import FormImage from "@/public/images/form-image.png";
+import Logo from "@/public/images/Logo.png";
 
 type Props = {
   children: ReactNode;
@@ -11,13 +13,13 @@ type Props = {
 
 const FormLayout = ({ children }: Props) => {
   return (
-  <section className="bg-primary flex flex-col lg:flex-row">
-      <div className="text-destructive-foreground flex flex-col justify-between p-8 w-full lg:w-1/2">
+    <section className="bg-primary flex flex-col lg:flex-row">
+      <div className="text-secondary w-full flex-col justify-between p-8 lg:w-1/2">
         <div className="mb-8 ml-8 flex items-center space-x-4">
           <Image src={Logo} alt="Logo" width={220} height={57} />
         </div>
-        <div className="w-full lg:w-2/2 mx-auto p-8 text-start">
-          <h1 className="text-4xl lg:text-5xl font-bold">
+        <div className="lg:w-2/2 mx-auto w-full p-8 text-start">
+          <h1 className="font-bold lg:text-5xl">
             Crea tu landing page profesional en minutos.
           </h1>
           <div>
@@ -39,7 +41,7 @@ const FormLayout = ({ children }: Props) => {
           />
         </div>
       </div>
-      <div className="bg-background flex w-full lg:w-1/2 items-center justify-center p-8">
+      <div className="bg-background flex w-full items-center justify-center p-8  lg:w-1/2">
         {children}
       </div>
     </section>
