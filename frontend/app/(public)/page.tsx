@@ -1,9 +1,15 @@
-import { Button } from "@/components/ui/button";
+import Footer from "@/modules/auth/components/footer-landing";
+import Header from "@/modules/auth/components/header-landing";
+import Navbar from "@/modules/auth/components/navbar-landing";
+import Section from "@/modules/auth/components/section-landing";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col  items-center      justify-between p-24">
-      <Button>Button</Button>
-    </main>
+    <>
+      <Navbar />
+      <Header />
+      <Section />
+      <Footer />
+    </>
   );
 }
