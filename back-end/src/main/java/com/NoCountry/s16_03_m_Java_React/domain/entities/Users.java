@@ -4,12 +4,17 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
+
+import java.util.Collection;
+import java.util.List;
 
 @Entity
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Users {
+public class Users{
 
     @Id
     @GeneratedValue( strategy = GenerationType.UUID)
@@ -21,6 +26,7 @@ public class Users {
     private Long phoneNumber;
     private String password;
     private String userName;
-    private String credit_card;
+
     private Boolean active;
+    
 }
