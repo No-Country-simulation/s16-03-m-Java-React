@@ -14,7 +14,7 @@ import java.util.List;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Users implements UserDetails {
+public class Users{
 
     @Id
     @GeneratedValue( strategy = GenerationType.UUID)
@@ -28,14 +28,5 @@ public class Users implements UserDetails {
     private String userName;
 
     private Boolean active;
-
-    @Override
-    public Collection<? extends GrantedAuthority> getAuthorities() {
-        return List.of();
-    }
-
-    @Override
-    public String getUsername() {
-        return "";
-    }
+    
 }
