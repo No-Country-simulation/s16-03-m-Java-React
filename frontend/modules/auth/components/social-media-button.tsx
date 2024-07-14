@@ -3,7 +3,6 @@
 import { FC } from "react";
 
 import { Button } from "@/components/ui/button";
-import { Apple, Facebook, Instagram } from "lucide-react";
 import { Icon } from "@/components/ui/icon";
 
 const SocialMediaButtons: FC = () => {

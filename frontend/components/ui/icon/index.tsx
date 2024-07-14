@@ -1,8 +1,11 @@
 import { FC } from "react";
 
 import Facebook from "./icons/facebook.svg";
+import Fb from "./icons/fb.svg";
 import Google from "./icons/google.svg";
+import Instagram from "./icons/instagram.svg";
 import Mac from "./icons/mac.svg";
+import Twitter from "./icons/twitter.svg";
 
 export const iconTypes = {
   ic_facebook: {
@@ -16,6 +19,18 @@ export const iconTypes = {
   ic_google: {
     component: Google,
     alt: "Google",
+  },
+  ic_instagram: {
+    component: Instagram,
+    alt: "Instagram",
+  },
+  ic_twitter: {
+    component: Twitter,
+    alt: "Twitter",
+  },
+  ic_fb: {
+    component: Fb,
+    alt: "Facebook",
   },
 };
 
