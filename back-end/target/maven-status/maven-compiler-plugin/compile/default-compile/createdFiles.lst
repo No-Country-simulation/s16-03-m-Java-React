@@ -6,9 +6,11 @@ com\NoCountry\s16_03_m_Java_React\infrastructure\controllers\UsersController.cla
 com\NoCountry\s16_03_m_Java_React\application\mapper\UsersMapperImpl.class
 com\NoCountry\s16_03_m_Java_React\application\implementations\UsersServiceImpl.class
 com\NoCountry\s16_03_m_Java_React\application\security\AuthenticationConfig.class
+com\NoCountry\s16_03_m_Java_React\domain\entities\Users.class
 com\NoCountry\s16_03_m_Java_React\S1603MJavaReactApplication.class
 com\NoCountry\s16_03_m_Java_React\application\dto\login\RequestLogin.class
 com\NoCountry\s16_03_m_Java_React\application\mapper\UsersMapper.class
+com\NoCountry\s16_03_m_Java_React\domain\repository\UsersRepository.class
 com\NoCountry\s16_03_m_Java_React\domain\services\UsersService.class
 com\NoCountry\s16_03_m_Java_React\application\dto\login\ResponseLogin.class
 com\NoCountry\s16_03_m_Java_React\domain\services\AuthenticationService.class
