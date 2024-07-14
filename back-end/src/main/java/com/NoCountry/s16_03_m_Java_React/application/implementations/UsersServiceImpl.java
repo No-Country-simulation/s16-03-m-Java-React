@@ -22,17 +22,18 @@ public class UsersServiceImpl implements UsersService {
 
     @Transactional
     @Override
-    public ReadDtoUser createUser(CreateDtoUser createDtoUser) {
+    public Users createUser(CreateDtoUser createDtoUser) {
         var userAlreadyExists = usersRepository.findByEmail(createDtoUser.email());
         if(userAlreadyExists.isPresent()){ throw new EntityExistsException("El email ya se encuentra en uso");}
 
-        Users user = this.usersMapper.createDtoToUser(createDtoUser);
+        Users user = usersMapper.createDtoToUser(createDtoUser);
+
+        user.setActive(true);
         user.setPassword(passwordEncoder.encode(createDtoUser.password()));
-        user.setActive(Boolean.TRUE);
 
         var userAdded = usersRepository.save(user);
 
-        return usersMapper.userToReadDto(userAdded);
+        return userAdded;
     }
 
     @Override
