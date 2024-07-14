@@ -22,7 +22,7 @@ public class UsersServiceImpl implements UsersService {
 
     @Transactional
     @Override
-    public Users createUser(CreateDtoUser createDtoUser) {
+    public ReadDtoUser createUser(CreateDtoUser createDtoUser) {
         var userAlreadyExists = usersRepository.findByEmail(createDtoUser.email());
         if(userAlreadyExists.isPresent()){ throw new EntityExistsException("El email ya se encuentra en uso");}
 
@@ -33,7 +33,7 @@ public class UsersServiceImpl implements UsersService {
 
         var userAdded = usersRepository.save(user);
 
-        return userAdded;
+        return usersMapper.userToReadDto(userAdded);
     }
 
     @Override
