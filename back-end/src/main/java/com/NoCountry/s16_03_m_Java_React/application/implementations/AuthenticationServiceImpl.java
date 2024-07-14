@@ -15,6 +15,7 @@ import org.springframework.stereotype.Service;
 public class AuthenticationServiceImpl implements AuthenticationService {
 
     private final UsersRepository usersRepository;
+    private final JwtService jwtService;
     private final AuthenticationManager authenticationManager;
 
     @Override
@@ -22,23 +23,27 @@ public class AuthenticationServiceImpl implements AuthenticationService {
 
         String token = "";
         String id = "";
-        String userName = "";
+        String nombreUsuario = "";
         String name = "";
         String lastName = "";
 
         var user = usersRepository.findByEmail(data.email());
         if(user.isPresent()){
-            id = user.get().getId();
-            userName = user.get().getUserName();
-            name = user.get().getName();
-            lastName = user.get().getLastName();
-        } else throw new EntityNotFoundException("No se puede encontrar el usuario con el email " + data.email());
+            var userEntity = user.get();
+            id = userEntity.getId();
+            token = jwtService.getToken(userEntity);
+            nombreUsuario = userEntity.getNombreUsuario();
+            name = userEntity.getName();
+            lastName = userEntity.getLastName();
+        } else {
+            throw new EntityNotFoundException("No se puede encontrar el usuario con el email " + data.email());
+        }
 
         authenticationManager.authenticate(
                 new UsernamePasswordAuthenticationToken(data.email(),
                         data.password()));
 
-        ResponseLogin responseLogin = new ResponseLogin(token, id, userName, name, lastName);
+        ResponseLogin responseLogin = new ResponseLogin(token, id, nombreUsuario, name, lastName);
 
         return responseLogin;
     }

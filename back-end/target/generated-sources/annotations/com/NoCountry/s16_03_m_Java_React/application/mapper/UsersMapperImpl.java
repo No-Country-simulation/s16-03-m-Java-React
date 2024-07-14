@@ -8,8 +8,8 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2024-07-12T10:09:38-0300",
-    comments = "version: 1.5.0.Final, compiler: javac, environment: Java 17.0.11 (Amazon.com Inc.)"
+    date = "2024-07-13T12:40:45-0300",
+    comments = "version: 1.5.5.Final, compiler: javac, environment: Java 17.0.11 (Amazon.com Inc.)"
 )
 @Component
 public class UsersMapperImpl implements UsersMapper {
@@ -21,6 +21,13 @@ public class UsersMapperImpl implements UsersMapper {
         }
 
         Users users = new Users();
+
+        users.setEmail( createDtoUser.email() );
+        users.setName( createDtoUser.name() );
+        users.setLastName( createDtoUser.lastName() );
+        users.setPhoneNumber( createDtoUser.phoneNumber() );
+        users.setPassword( createDtoUser.password() );
+        users.setNombreUsuario( createDtoUser.nombreUsuario() );
 
         return users;
     }
@@ -35,9 +42,15 @@ public class UsersMapperImpl implements UsersMapper {
         String email = null;
         String name = null;
         String lastName = null;
-        String userName = null;
+        String nombreUsuario = null;
 
-        ReadDtoUser readDtoUser = new ReadDtoUser( id, email, name, lastName, userName );
+        id = user.getId();
+        email = user.getEmail();
+        name = user.getName();
+        lastName = user.getLastName();
+        nombreUsuario = user.getNombreUsuario();
+
+        ReadDtoUser readDtoUser = new ReadDtoUser( id, email, name, lastName, nombreUsuario );
 
         return readDtoUser;
     }

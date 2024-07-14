@@ -3,6 +3,7 @@ com\NoCountry\s16_03_m_Java_React\application\dto\users\CreateDtoUser.class
 com\NoCountry\s16_03_m_Java_React\application\implementations\AuthenticationServiceImpl.class
 com\NoCountry\s16_03_m_Java_React\application\dto\users\ReadDtoUser.class
 com\NoCountry\s16_03_m_Java_React\infrastructure\controllers\UsersController.class
+com\NoCountry\s16_03_m_Java_React\application\security\JwtService.class
 com\NoCountry\s16_03_m_Java_React\application\mapper\UsersMapperImpl.class
 com\NoCountry\s16_03_m_Java_React\application\implementations\UsersServiceImpl.class
 com\NoCountry\s16_03_m_Java_React\application\security\AuthenticationConfig.class
