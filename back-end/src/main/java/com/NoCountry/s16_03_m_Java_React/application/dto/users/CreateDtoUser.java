@@ -22,6 +22,6 @@ public record CreateDtoUser(
         @NotNull(message = "El numero de telefono no puede ser nulo")
         Long phoneNumber,
         @NotNull(message = "El UserName no puede ser nulo")
-        String nombreUsuario
+        String userName
 ) {
 }

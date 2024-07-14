@@ -5,6 +5,6 @@ public record ReadDtoUser(
         String email,
         String name,
         String lastName,
-        String nombreUsuario
+        String userName
 ) {
 }
