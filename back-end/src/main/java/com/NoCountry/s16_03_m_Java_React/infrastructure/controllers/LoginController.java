@@ -25,7 +25,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/login")
 public class LoginController {
 
-//    private final AuthenticationService authenticationService;
+    private final AuthenticationService authenticationService;
     private final AuthenticationManager authenticationManager;
     private final TokenService tokenService;
 
@@ -42,7 +42,6 @@ public class LoginController {
         try {
             Authentication authToken = new UsernamePasswordAuthenticationToken(requestLogin.email(),
                     requestLogin.password());
-            System.out.println("autenticación: " + authToken);
 
             var authUser = authenticationManager.authenticate(authToken);
             var JWTtoken = tokenService.generarToken((Users) authUser.getPrincipal());

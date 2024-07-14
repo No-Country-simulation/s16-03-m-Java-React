@@ -30,7 +30,7 @@ public class UsersController {
 
         return ResponseEntity.ok(usersService.readUserById(id));
     }
-    @GetMapping("/{email}")
+    @GetMapping("/email/{email}")
     public ResponseEntity<ReadDtoUser> findUserByEmail(@PathVariable String email){
 
         return ResponseEntity.ok(usersService.readUserByEmail(email));

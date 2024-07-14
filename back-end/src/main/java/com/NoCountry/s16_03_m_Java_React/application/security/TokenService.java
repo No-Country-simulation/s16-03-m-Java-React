@@ -1,12 +1,11 @@
 package com.NoCountry.s16_03_m_Java_React.application.security;
 
 import com.NoCountry.s16_03_m_Java_React.domain.entities.Users;
-import com.auth0.jwt.JWT;
-import com.auth0.jwt.algorithms.Algorithm;
-import com.auth0.jwt.exceptions.JWTCreationException;
-import com.auth0.jwt.exceptions.JWTVerificationException;
-import com.auth0.jwt.exceptions.TokenExpiredException;
-import com.auth0.jwt.interfaces.DecodedJWT;
+
+import io.jsonwebtoken.Claims;
+import io.jsonwebtoken.JwtException;
+import io.jsonwebtoken.Jwts;
+import io.jsonwebtoken.SignatureAlgorithm;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
@@ -24,37 +23,87 @@ public class TokenService {
     private String apiSecret;
 
     public String generarToken(Users users) {
+        // Nueva version usando jjwt
+        System.out.println("Id: " + users.getId());
+        System.out.println("Name: " + users.getName());
+        System.out.println("LastName: " + users.getLastName());
+        System.out.println("UserName: " + users.getUsername());
+        System.out.println("Email: " + users.getEmail());
+        System.out.println("Email: " + users.getPassword());
+        System.out.println("Active: " + users.getActive());
+        System.out.println("PhoneNumber: " + users.getPhoneNumber());
+
         try {
-            Algorithm algorithm = Algorithm.HMAC256(apiSecret);
-            var token = JWT.create()
-                    .withIssuer("Cosmos API")
-                    .withSubject(users.getUsername())
-                    .withClaim("id", users.getId())
-                    .withExpiresAt(generarFechaExpiracion())
-                    .sign(algorithm);
-            return token;
-        } catch (JWTCreationException exception) { // modificar para devolver un mensaje mediante Json
-            throw new RuntimeException();
+            SignatureAlgorithm signatureAlgorithm = SignatureAlgorithm.HS256;
+            byte[] apiKeySecretBytes = apiSecret.getBytes();
+
+            Instant expiracion = generarFechaExpiracion();
+            Date fechaExpiracion = Date.from(expiracion);
+
+            var token = Jwts.builder()
+                    .setIssuer("Cosmos API")
+                    .setSubject(users.getEmail())
+                    .claim("id", users.getId())
+                    .setExpiration(fechaExpiracion)
+                    .signWith(signatureAlgorithm, apiKeySecretBytes);
+            return token.toString();
+        } catch (JwtException e) {
+            throw new RuntimeException(e.getMessage());
         }
+
+        // Version anterior usando auth0
+//        try {
+//            Algorithm algorithm = Algorithm.HMAC256(apiSecret);
+//            var token = JWT.create()
+//                    .withIssuer("Cosmos API")
+//                    .withSubject(users.getUsername())
+//                    .withClaim("id", users.getId())
+//                    .withExpiresAt(generarFechaExpiracion())
+//                    .sign(algorithm);
+//            return token;
+//        } catch (JWTCreationException exception) { // modificar para devolver un mensaje mediante Json
+//            throw new RuntimeException();
+//        }
     }
 
     public String getSubject(String token) {
-        if (token == null) {
-            throw new RuntimeException(); // modificar para mostrar un mensaje Json
+        // Nueva versión utilizando jjwt
+        if (token == null || token.isEmpty()) {
+            throw new IllegalArgumentException("Token vacío");
         }
-        DecodedJWT verifier = null;
-        Algorithm algorithm = Algorithm.HMAC256(apiSecret);
-        verifier = JWT.require(algorithm)
-                .withIssuer("Cosmos API")
-                .build()
-                .verify(token);
-        var verifiado = verifier.getSubject();
-        System.out.println("Verifiado: " + verifiado);
 
-        if (verifier == null) {
-            throw new TokenExpiredException("Verificaion Inválida", null);
+        try {
+            SignatureAlgorithm signatureAlgorithm = SignatureAlgorithm.HS256;
+            byte[] apiKeySecretBytes = apiSecret.getBytes();
+
+            Claims claims = Jwts.parserBuilder()
+                    .setSigningKey(apiKeySecretBytes)
+                    .build()
+                    .parseClaimsJws(token).getBody();
+
+            return claims.getSubject();
+        } catch (Exception e) {
+            throw new RuntimeException(e.getMessage());
         }
-        return verifier.getSubject();
+
+
+        // Versión anterior utilizando auth0
+//        if (token == null) {
+//            throw new RuntimeException(); // modificar para mostrar un mensaje Json
+//        }
+//        DecodedJWT verifier = null;
+//        Algorithm algorithm = Algorithm.HMAC256(apiSecret);
+//        verifier = JWT.require(algorithm)
+//                .withIssuer("Cosmos API")
+//                .build()
+//                .verify(token);
+//        var verifiado = verifier.getSubject();
+//        System.out.println("Verifiado: " + verifiado);
+//
+//        if (verifier == null) {
+//            throw new TokenExpiredException("Verificaion Inválida", null);
+//        }
+//        return verifier.getSubject();
 
     }
 
