@@ -6,7 +6,7 @@ import com.NoCountry.s16_03_m_Java_React.domain.entities.Users;
 
 public interface UsersService {
 
-Users createUser(CreateDtoUser createDtoUser);
+ReadDtoUser createUser(CreateDtoUser createDtoUser);
 ReadDtoUser readUserById(String id);
 ReadDtoUser readUserByEmail(String email);
 }

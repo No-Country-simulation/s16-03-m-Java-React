@@ -2,7 +2,6 @@ package com.NoCountry.s16_03_m_Java_React.infrastructure.controllers;
 
 import com.NoCountry.s16_03_m_Java_React.application.dto.users.CreateDtoUser;
 import com.NoCountry.s16_03_m_Java_React.application.dto.users.ReadDtoUser;
-import com.NoCountry.s16_03_m_Java_React.domain.entities.Users;
 import com.NoCountry.s16_03_m_Java_React.domain.services.UsersService;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotNull;
@@ -19,7 +18,7 @@ public class UsersController {
     public final UsersService usersService;
 
     @PostMapping("/register")
-    public ResponseEntity<Users> registerUser(@RequestBody @Valid @NotNull CreateDtoUser createUser){
+    public ResponseEntity<ReadDtoUser> registerUser(@RequestBody @Valid @NotNull CreateDtoUser createUser){
 
         return ResponseEntity.status(HttpStatus.CREATED).body(
                 this.usersService.createUser(createUser));

@@ -1,10 +1,11 @@
 "use client";
 
 import { ReactNode } from "react";
-import Logo from "@/public/images/Logo.png";
-import WebWave from "@/public/images/WebWave.png";
-import FormImage from "@/public/images/form-image.png";
+
 import Image from "next/image";
+
+import FormImage from "@/public/images/form-image.png";
+import Logo from "@/public/images/Logo.png";
 
 type Props = {
   children: ReactNode;
@@ -12,18 +13,17 @@ type Props = {
 
 const FormLayout = ({ children }: Props) => {
   return (
-    <section className="bg-primary  flex">
-      <div className="text-destructive-foreground flex w-1/2 flex-col justify-between p-8">
-        <div className="mb-8 flex items-center space-x-4">
-          <Image src={Logo} alt="Logo" width={50} height={50} />
-          <Image src={WebWave} alt="Logo" width={100} height={50} />
+    <section className="bg-primary flex flex-col lg:flex-row">
+      <div className="text-secondary w-full flex-col justify-between p-8 lg:w-1/2">
+        <div className="mb-8 ml-8 flex items-center space-x-4">
+          <Image src={Logo} alt="Logo" width={220} height={57} />
         </div>
-        <div className="w-2/2 mx-auto p-8 text-start">
-          <h1 className="mb-4 text-5xl font-extrabold ">
+        <div className="lg:w-2/2 mx-auto w-full p-8 text-start">
+          <h1 className="font-bold lg:text-5xl">
             Crea tu landing page profesional en minutos.
           </h1>
           <div>
-            <p className="mt-20 text-xl">
+            <p className="mt-10 text-xl lg:text-2xl">
               Haz <span className="font-bold">crecer tu negocio</span> y{" "}
               <span className="font-bold">multiplica tus ventas</span> e
               interacciones <span className="font-bold">gratis</span> y en
@@ -31,17 +31,17 @@ const FormLayout = ({ children }: Props) => {
             </p>
           </div>
         </div>
-        <div className="mt-8 ">
+        <div className="mt-8 flex justify-center">
           <Image
             className="mx-auto items-center"
             src={FormImage}
             alt="Image form"
-            width={600}
-            height={600}
+            width={580}
+            height={580}
           />
         </div>
       </div>
-      <div className="bg-background flex w-1/2 items-center justify-center">
+      <div className="bg-background flex w-full items-center justify-center p-8  lg:w-1/2">
         {children}
       </div>
     </section>
