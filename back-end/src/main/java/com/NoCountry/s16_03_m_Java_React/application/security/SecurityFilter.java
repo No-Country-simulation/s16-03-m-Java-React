@@ -22,7 +22,8 @@ public class SecurityFilter extends OncePerRequestFilter {
     @Override
     protected void doFilterInternal(HttpServletRequest request,
                                     HttpServletResponse response,
-                                    FilterChain filterChain) throws ServletException, IOException {
+                                    FilterChain filterChain)
+            throws ServletException, IOException {
         //Obtener token del header
         String authHeader = request.getHeader("Authorization");
 
@@ -34,7 +35,7 @@ public class SecurityFilter extends OncePerRequestFilter {
                 var users = usersRepository.findByEmail(userName);
                 var authentication = new UsernamePasswordAuthenticationToken(users,
                         null,
-                        users.get().getAuthorities());
+                        users.getAuthorities());
                 SecurityContextHolder.getContext().setAuthentication(authentication);
             }
         }

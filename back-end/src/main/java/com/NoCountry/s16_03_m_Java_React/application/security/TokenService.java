@@ -24,14 +24,6 @@ public class TokenService {
 
     public String generarToken(Users users) {
         // Nueva version usando jjwt
-        System.out.println("Id: " + users.getId());
-        System.out.println("Name: " + users.getName());
-        System.out.println("LastName: " + users.getLastName());
-        System.out.println("UserName: " + users.getUsername());
-        System.out.println("Email: " + users.getEmail());
-        System.out.println("Email: " + users.getPassword());
-        System.out.println("Active: " + users.getActive());
-        System.out.println("PhoneNumber: " + users.getPhoneNumber());
 
         try {
             SignatureAlgorithm signatureAlgorithm = SignatureAlgorithm.HS256;

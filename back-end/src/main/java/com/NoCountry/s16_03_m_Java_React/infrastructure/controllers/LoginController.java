@@ -1,13 +1,13 @@
 package com.NoCountry.s16_03_m_Java_React.infrastructure.controllers;
 
 import com.NoCountry.s16_03_m_Java_React.application.dto.login.RequestLogin;
-import com.NoCountry.s16_03_m_Java_React.application.dto.login.ResponseLogin;
+
 import com.NoCountry.s16_03_m_Java_React.application.security.DtoJWTToken;
 import com.NoCountry.s16_03_m_Java_React.application.security.TokenService;
 import com.NoCountry.s16_03_m_Java_React.domain.entities.Users;
-import com.NoCountry.s16_03_m_Java_React.domain.services.AuthenticationService;
+
 import jakarta.validation.Valid;
-import jakarta.validation.constraints.NotNull;
+
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -25,13 +25,13 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/login")
 public class LoginController {
 
-    private final AuthenticationService authenticationService;
+    //private final AuthenticationService authenticationService;
     private final AuthenticationManager authenticationManager;
     private final TokenService tokenService;
 
     @PostMapping
     public ResponseEntity login(
-            @RequestBody @Valid @NotNull RequestLogin requestLogin){
+            @RequestBody @Valid RequestLogin requestLogin){
         if (requestLogin.email() == null || requestLogin.email().isEmpty()) {
             return ResponseEntity.badRequest().body("El email.no debe estar vacío");
         }

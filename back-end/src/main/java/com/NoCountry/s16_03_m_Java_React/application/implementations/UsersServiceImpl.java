@@ -24,7 +24,7 @@ public class UsersServiceImpl implements UsersService {
     @Override
     public ReadDtoUser createUser(CreateDtoUser createDtoUser) {
         var userAlreadyExists = usersRepository.findByEmail(createDtoUser.email());
-        if(userAlreadyExists.isPresent()){ throw new EntityExistsException("El email ya se encuentra en uso");}
+        if(userAlreadyExists != null){ throw new EntityExistsException("El email ya se encuentra en uso");}
 
         Users user = usersMapper.createDtoToUser(createDtoUser);
 
