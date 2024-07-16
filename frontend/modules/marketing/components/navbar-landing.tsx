@@ -3,7 +3,7 @@
 import { FC, useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { Menu, X } from 'lucide-react';
+import { Menu, X } from "lucide-react";
 
 import Cosmosnav from "@/public/images/Cosmosnav.png";
 import Logonav from "@/public/images/Logonav.png";
@@ -13,7 +13,7 @@ const Navbar: FC = () => {
   const [isMobileScreen, setIsMobileScreen] = useState(false);
 
   useEffect(() => {
-    const mediaQuery = window.matchMedia('(max-width: 768px)');
+    const mediaQuery = window.matchMedia("(max-width: 768px)");
     setIsMobileScreen(mediaQuery.matches);
 
     const handleResize = () => {
@@ -23,10 +23,10 @@ const Navbar: FC = () => {
       }
     };
 
-    mediaQuery.addEventListener('change', handleResize);
+    mediaQuery.addEventListener("change", handleResize);
 
     return () => {
-      mediaQuery.removeEventListener('change', handleResize);
+      mediaQuery.removeEventListener("change", handleResize);
     };
   }, []);
 
@@ -35,7 +35,7 @@ const Navbar: FC = () => {
   };
 
   return (
-    <nav className="bg-white w-full shadow-md lg:px-20 md:px-10 z-50 relative">
+    <nav className="relative z-50 w-full bg-white shadow-md md:px-10 lg:px-20">
       <div className="container mx-auto flex items-center justify-between p-2">
         <Link href="/">
           <div className="flex items-center">
@@ -49,12 +49,12 @@ const Navbar: FC = () => {
             <Image src={Cosmosnav} alt="Cosmosnav" width={128} height={22} />
           </div>
         </Link>
-      
-        <div className="hidden md:flex flex-grow justify-center space-x-4">
+
+        <div className="hidden flex-grow justify-center space-x-4 md:flex">
           <ul className="flex space-x-4">
             <li>
               <Link
-                className="lg:mx-6 text-muted-foreground hover:text-primary"
+                className="text-muted-foreground hover:text-primary lg:mx-6"
                 href="/"
               >
                 Inicio
@@ -62,7 +62,7 @@ const Navbar: FC = () => {
             </li>
             <li>
               <Link
-                className="lg:mx-6 text-muted-foreground hover:text-primary"
+                className="text-muted-foreground hover:text-primary lg:mx-6"
                 href="/socios"
               >
                 Socios
@@ -70,7 +70,7 @@ const Navbar: FC = () => {
             </li>
             <li>
               <Link
-                className="lg:mx-6 text-muted-foreground hover:text-primary"
+                className="text-muted-foreground hover:text-primary lg:mx-6"
                 href="/planes"
               >
                 Planes
@@ -78,7 +78,7 @@ const Navbar: FC = () => {
             </li>
             <li>
               <Link
-                className="lg:mx-6 text-muted-foreground hover:text-primary"
+                className="text-muted-foreground hover:text-primary lg:mx-6"
                 href="/ayuda"
               >
                 Ayuda
@@ -87,7 +87,7 @@ const Navbar: FC = () => {
           </ul>
         </div>
 
-        <div className="hidden md:flex items-center space-x-4">
+        <div className="hidden items-center space-x-4 md:flex">
           <Link
             className="bg-background text-primary border-primary rounded-full border-2 px-4 py-1 text-xs md:px-6 md:py-1 md:text-base"
             href="/login"
@@ -102,7 +102,7 @@ const Navbar: FC = () => {
           </Link>
         </div>
 
-        <div className="md:hidden flex items-center">
+        <div className="flex items-center md:hidden">
           <button
             onClick={toggleMobileMenu}
             className="outline-none focus:outline-none"
@@ -117,11 +117,11 @@ const Navbar: FC = () => {
       </div>
 
       {isMobileScreen && mobileMenuOpen && (
-        <div className="absolute top-full left-0 w-full bg-white shadow-md">
-          <ul className="flex flex-col items-center py-2 space-y-2">
+        <div className="absolute left-0 top-full w-full bg-white shadow-md">
+          <ul className="flex flex-col items-center space-y-2 py-2">
             <li>
               <Link
-                className="text-xs  text-muted-foreground hover:text-primary block"
+                className="text-muted-foreground  hover:text-primary block text-xs"
                 href="/"
               >
                 Inicio
@@ -129,7 +129,7 @@ const Navbar: FC = () => {
             </li>
             <li>
               <Link
-                className="text-xs text-muted-foreground hover:text-primary block"
+                className="text-muted-foreground hover:text-primary block text-xs"
                 href="/socios"
               >
                 Socios
@@ -137,7 +137,7 @@ const Navbar: FC = () => {
             </li>
             <li>
               <Link
-                className="text-xs  text-muted-foreground hover:text-primary block"
+                className="text-muted-foreground  hover:text-primary block text-xs"
                 href="/planes"
               >
                 Planes
@@ -145,7 +145,7 @@ const Navbar: FC = () => {
             </li>
             <li>
               <Link
-                className="text-xs text-muted-foreground hover:text-primary block"
+                className="text-muted-foreground hover:text-primary block text-xs"
                 href="/ayuda"
               >
                 Ayuda
@@ -153,7 +153,7 @@ const Navbar: FC = () => {
             </li>
             <li>
               <Link
-                className="bg-background text-primary  text-xs md:px-6 md:py-1 md:text-base block"
+                className="bg-background text-primary  block text-xs md:px-6 md:py-1 md:text-base"
                 href="/login"
               >
                 Ingresar
@@ -161,7 +161,7 @@ const Navbar: FC = () => {
             </li>
             <li>
               <Link
-                className="text-xs text-destructive-foreground  md:px-6 md:py-1 md:text-base block"
+                className="text-destructive-foreground block  text-xs md:px-6 md:py-1 md:text-base"
                 href="/register"
               >
                 Registrarse
