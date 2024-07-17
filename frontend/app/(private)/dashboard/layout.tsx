@@ -14,7 +14,9 @@ const RootLayout = ({ children }: Props) => {
       <body className={poppins.className}>
         <Layout variant="width_sidebar">
           <Sidebar />
-          <Layout asChild>{children}</Layout>
+          <Layout asChild>
+            <main>{children}</main>
+          </Layout>
         </Layout>
       </body>
     </html>
