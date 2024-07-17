@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6ba83ad2-4b07-4d5d-8201-634386298acb" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/styles/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles/globals.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tailwind.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/tailwind.config.ts" afterDir="false" />
+    <list default="true" id="6ba83ad2-4b07-4d5d-8201-634386298acb" name="Changes" comment="feat(frontend): added layout">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(private)/dashboard/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(private)/dashboard/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/dashboard/init/components/heading.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/modules/dashboard/init/components/heading.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,30 +51,35 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "joel-main-layout",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.standard": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.standard": "",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "npm.dev.executor": "Run",
-    "settings.editor.selected.configurable": "settings.javascript.linters.eslint",
-    "ts.external.directory.path": "D:\\github\\personal\\s16-03-m-Java-React\\frontend\\node_modules\\typescript\\lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;joel-main-layout&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/github/personal/s16-03-m-Java-React/frontend/public/images&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.standard&quot;: &quot;&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;npm.dev.executor&quot;: &quot;Run&quot;,
+    &quot;npm.format.executor&quot;: &quot;Run&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;D:\\github\\personal\\s16-03-m-Java-React\\frontend\\node_modules\\typescript\\lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\github\personal\s16-03-m-Java-React\frontend\public\images" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\github\personal\s16-03-m-Java-React\frontend\public\images" />
       <recent name="D:\github\personal\s16-03-m-Java-React\frontend\components\layouts" />
       <recent name="D:\github\personal\s16-03-m-Java-React\frontend\components" />
       <recent name="D:\github\personal\s16-03-m-Java-React\frontend\app\(private)\dashboard\products" />
       <recent name="D:\github\personal\s16-03-m-Java-React\frontend\app\(private)\dashboard\productos" />
-      <recent name="D:\github\personal\s16-03-m-Java-React\frontend\app\(private)\dashboard" />
     </key>
   </component>
   <component name="RunManager" selected="npm.format">
@@ -120,11 +126,36 @@
       <option name="presentableId" value="Default" />
       <updated>1720705897238</updated>
       <workItem from="1720705899337" duration="1804000" />
-      <workItem from="1721138477072" duration="3590000" />
+      <workItem from="1721138477072" duration="3862000" />
+      <workItem from="1721216676406" duration="1245000" />
+      <workItem from="1721217939751" duration="2173000" />
+      <workItem from="1721220131949" duration="1248000" />
+      <workItem from="1721221401257" duration="4377000" />
     </task>
+    <task id="LOCAL-00001" summary="feat(frontend): added layout">
+      <option name="closed" value="true" />
+      <created>1721142178832</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1721142178833</updated>
+    </task>
+    <task id="LOCAL-00002" summary="feat(frontend): added layout">
+      <option name="closed" value="true" />
+      <created>1721142195561</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1721142195561</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="feat(frontend): added layout" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat(frontend): added layout" />
   </component>
 </project>

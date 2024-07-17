@@ -1,8 +1,11 @@
+import { Heading, Panel } from "@/modules/dashboard/init/components";
+
 const Init = () => {
   return (
-    <main>
-      <h1>Dashboard</h1>
-    </main>
+    <div className="space-y-24 py-10">
+      <Heading />
+      <Panel />
+    </div>
   );
 };
 
