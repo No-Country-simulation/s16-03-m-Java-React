@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 import { Button } from "@/components/ui/button";
 
 const Heading = () => {
@@ -16,10 +18,11 @@ const Heading = () => {
         </p>
       </div>
       <Button
+        asChild
         className="mx-auto w-full max-w-2xl rounded-lg py-8 text-xl"
         size="lg"
       >
-        Crear mi web
+        <Link href="dashboard/templates/">Crear mi web</Link>
       </Button>
     </section>
   );
