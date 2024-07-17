@@ -28,6 +28,11 @@ public class SecurityConfigurations {
                 .authorizeHttpRequests(authRequest -> authRequest
                         .requestMatchers(HttpMethod.POST, "/login").permitAll()
                         .requestMatchers(HttpMethod.POST, "/user").permitAll()
+                        .requestMatchers(HttpMethod.POST, "/**").permitAll()
+                        .requestMatchers(HttpMethod.GET, "/**").permitAll()
+                        .requestMatchers(HttpMethod.PUT, "/**").permitAll()
+                        .requestMatchers(HttpMethod.DELETE, "/**").permitAll()
+                        .requestMatchers(HttpMethod.PATCH, "/**").permitAll()
                         .requestMatchers("/swagger-ui.html", "/v3/api-docs/**", "/swagger-ui/**").permitAll()
                         .anyRequest()
                         .authenticated())
