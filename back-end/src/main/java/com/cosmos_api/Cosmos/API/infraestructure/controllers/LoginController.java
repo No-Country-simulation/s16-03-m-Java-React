@@ -2,7 +2,7 @@ package com.cosmos_api.Cosmos.API.infraestructure.controllers;
 
 import com.cosmos_api.Cosmos.API.domain.entities.Usuario;
 import com.cosmos_api.Cosmos.API.aplication.dto.login.DatosAutenticacionUsuario;
-import com.cosmos_api.Cosmos.API.aplication.dto.token.DatosJWTToken;
+import com.cosmos_api.Cosmos.API.aplication.dto.token.DatosJwtToken;
 import com.cosmos_api.Cosmos.API.domain.services.TokenService;
 import io.swagger.v3.oas.annotations.Operation;
 import jakarta.validation.Valid;
@@ -39,7 +39,7 @@ public class LoginController {
                     datosAutenticacionUsuario.password());
             var usuarioAutenticado = authenticationManager.authenticate(authToken);
             var JWTtoken = tokenService.generarToken((Usuario) usuarioAutenticado.getPrincipal());
-            return ResponseEntity.ok(new DatosJWTToken(JWTtoken));
+            return ResponseEntity.ok(new DatosJwtToken(JWTtoken));
 
         } catch (BadCredentialsException e) {
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Contraseña invalida");
