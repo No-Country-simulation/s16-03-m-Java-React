@@ -1,9 +1,7 @@
+import Heading from "./components/Heading";
+
 const Products = () => {
-  return (
-    <div>
-      <h1>Products</h1>
-    </div>
-  );
+  return <Heading />;
 };
 
 export default Products;

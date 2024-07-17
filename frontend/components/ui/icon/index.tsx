@@ -6,6 +6,9 @@ import Google from "./icons/google.svg";
 import Instagram from "./icons/instagram.svg";
 import Mac from "./icons/mac.svg";
 import Twitter from "./icons/twitter.svg";
+import User from "./icons/perfil.svg";
+import Chat from "./icons/chat.svg";
+import Notify from "./icons/notifications.svg";
 
 export const iconTypes = {
   ic_facebook: {
@@ -31,6 +34,18 @@ export const iconTypes = {
   ic_fb: {
     component: Fb,
     alt: "Facebook",
+  },
+  ic_user: {
+    component: User,
+    alt: "User",
+  },
+  ic_chat: {
+    component: Chat,
+    alt: "Chat",
+  },
+  ic_notify: {
+    component: Notify,
+    alt: "Notification",
   },
 };
 
