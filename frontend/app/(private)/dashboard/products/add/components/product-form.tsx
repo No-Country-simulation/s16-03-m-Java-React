@@ -1,8 +1,9 @@
 "use client";
 
-import Image from "next/image";
-import { useState } from "react";
+import React, { useState } from "react";
+
 import { zodResolver } from "@hookform/resolvers/zod";
+import Image from "next/image";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 
@@ -17,7 +18,6 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-
 import Up from "@/public/images/Up.png";
 
 const ProductForm = () => {
@@ -74,7 +74,7 @@ const ProductForm = () => {
   });
 
   function onSubmit(data: z.infer<typeof ProductSchema>) {
-    console.log(data);
+    console.log("data=>", data.image);
   }
 
   console.log(images);
@@ -207,6 +207,7 @@ const ProductForm = () => {
               <FormField
                 control={form.control}
                 name="image"
+                //TODO: put a limit to upload images, verify validation on submit
                 render={({ field }) => (
                   <FormItem>
                     <FormControl>
@@ -221,6 +222,7 @@ const ProductForm = () => {
                         onDragLeave={handleDragLeave}
                       >
                         <Input
+                          {...field}
                           className="hidden"
                           type="file"
                           id="image"

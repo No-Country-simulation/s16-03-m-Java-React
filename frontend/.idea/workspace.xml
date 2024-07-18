@@ -6,10 +6,36 @@
   <component name="ChangeListManager">
     <list default="true" id="6ba83ad2-4b07-4d5d-8201-634386298acb" name="Changes" comment="feat(frontend): added layout">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/auth/components/register-form.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/modules/auth/components/register-form.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/auth/schemas/register-schema.ts" beforeDir="false" afterPath="$PROJECT_DIR$/modules/auth/schemas/register-schema.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(private)/dashboard/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(private)/dashboard/layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(private)/dashboard/products/add/components/product-form.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(private)/dashboard/products/add/components/product-form.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(private)/dashboard/products/add/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(private)/dashboard/products/add/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(private)/dashboard/products/add/schemas/product-schema.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/(private)/dashboard/products/add/schemas/product-schema.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(private)/dashboard/products/components/Heading.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(private)/dashboard/products/components/Heading.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(private)/dashboard/products/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(private)/dashboard/products/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(private)/dashboard/templates/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(private)/dashboard/templates/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(public)/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(public)/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/ui/icon/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/ui/icon/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/ui/textarea.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/ui/textarea.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/dashboard/components/button-user.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/modules/dashboard/components/button-user.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/dashboard/components/header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/modules/dashboard/components/header.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/dashboard/components/sidebar/components/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/modules/dashboard/components/sidebar/components/index.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/modules/dashboard/components/sidebar/components/item.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/modules/dashboard/components/sidebar/components/item.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/marketing/components/header-landing.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/modules/marketing/components/header-landing.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/dashboard/components/sidebar/data.ts" beforeDir="false" afterPath="$PROJECT_DIR$/modules/dashboard/components/sidebar/data.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/dashboard/init/components/heading.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/modules/dashboard/init/components/heading.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/dashboard/init/components/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/modules/dashboard/init/components/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/dashboard/init/components/panel/components/control-card.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/modules/dashboard/init/components/panel/components/control-card.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/dashboard/init/components/panel/components/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/modules/dashboard/init/components/panel/components/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/dashboard/init/components/panel/data.ts" beforeDir="false" afterPath="$PROJECT_DIR$/modules/dashboard/init/components/panel/data.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/dashboard/init/components/panel/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/modules/dashboard/init/components/panel/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/dashboard/templates/components/heading.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/modules/dashboard/templates/components/heading.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/dashboard/templates/components/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/modules/dashboard/templates/components/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/dashboard/templates/components/search.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/modules/dashboard/templates/components/search.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/dashboard/templates/components/template-card.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/modules/dashboard/templates/components/template-card.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/dashboard/templates/constants/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/modules/dashboard/templates/constants/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/dashboard/templates/constants/template-data.ts" beforeDir="false" afterPath="$PROJECT_DIR$/modules/dashboard/templates/constants/template-data.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/dashboard/templates/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/modules/dashboard/templates/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/marketing/components/section-landing.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/modules/marketing/components/section-landing.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles/globals.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -138,7 +164,7 @@
       <workItem from="1721220131949" duration="1248000" />
       <workItem from="1721221401257" duration="4724000" />
       <workItem from="1721269880175" duration="6399000" />
-      <workItem from="1721305589937" duration="1948000" />
+      <workItem from="1721305589937" duration="2931000" />
     </task>
     <task id="LOCAL-00001" summary="feat(frontend): added layout">
       <option name="closed" value="true" />
