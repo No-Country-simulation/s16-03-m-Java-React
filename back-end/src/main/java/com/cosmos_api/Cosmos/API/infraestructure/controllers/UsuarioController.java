@@ -25,10 +25,14 @@ public class UsuarioController {
     @Transactional
     @Operation(summary = "Registra un nuevo usuario en la base de datos")
     public ResponseEntity<?> registrarUsuario(@RequestBody @Valid DatosRegistroUsuario datosRegistroUsuario) {
-
-            userService.registrarUsuario(datosRegistroUsuario);
-            return ResponseEntity.status(HttpStatus.CREATED)
-                    .body("Usuario creado Correctamente");
+            try {
+                userService.registrarUsuario(datosRegistroUsuario);
+                return ResponseEntity.status(HttpStatus.CREATED)
+                        .body("Usuario creado Correctamente");
+            } catch (Exception e){
+                return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                        .body("El correo electrónico ya está en uso");
+            }
     }
 
 
