@@ -1,10 +1,10 @@
 import { ReactNode } from "react";
 
 import { Layout } from "@/components/layouts";
+import Header from "@/modules/dashboard/components/header";
 import Sidebar from "@/modules/dashboard/components/sidebar";
 import Footer from "@/modules/marketing/components/footer-landing";
 import { poppins } from "@/styles/font";
-import Header from "@/modules/dashboard/components/header";
 
 type Props = {
   children: ReactNode;
