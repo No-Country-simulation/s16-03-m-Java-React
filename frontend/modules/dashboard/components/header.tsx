@@ -1,16 +1,17 @@
 "use client";
 
 import { FC } from "react";
+
 import Image from "next/image";
 import Link from "next/link";
 
+import ButtonUser from "@/modules/dashboard/components/button-user";
 import Cosmosnav from "@/public/images/Cosmosnav.png";
 import Logonav from "@/public/images/Logonav.png";
-import ButtonUser from "@/modules/dashboard/components/button-user";
 
 const Header: FC = () => {
   return (
-    <nav className="relative z-50 w-full bg-white px-4 shadow-md md:px-10 lg:px-20">
+    <nav className="relative z-50 w-full bg-white px-4 shadow-md md:px-10 lg:px-12">
       <div className="mx-auto flex items-center justify-between py-2">
         <Link href="/">
           <div className="flex items-center">
