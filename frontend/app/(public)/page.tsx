@@ -1,9 +1,19 @@
-import { Button } from '@/components/ui/button'
+"use client";
+import Footer from "@/modules/marketing/components/footer-landing";
+import Header from "@/modules/marketing/components/header-landing";
+import Layout from "@/modules/marketing/components/landing-layout";
+import Navbar from "@/modules/marketing/components/navbar-landing";
+import Section from "@/modules/marketing/components/section-landing";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col  items-center      justify-between p-24">
-      <Button>Button</Button>
-    </main>
-  )
+    <>
+      <Layout>
+        <Navbar />
+        <Header />
+        <Section />
+        <Footer />
+      </Layout>
+    </>
+  );
 }
