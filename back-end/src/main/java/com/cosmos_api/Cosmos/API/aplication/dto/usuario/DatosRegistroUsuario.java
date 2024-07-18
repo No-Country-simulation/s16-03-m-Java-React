@@ -13,6 +13,15 @@ public record DatosRegistroUsuario(
         @Size(min = 8, message = "La contraseña debe tener al menos 8 caracteres")
 //        @Pattern(regexp = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).*$", message = "La contraseña debe contener" +
 //                " al menos un número, una letra mayúscula y un caracter especial")
-        String password
+        String password,
+        @NotBlank(message = "El nombre no debe estar vacío")
+        String name,
+        @NotBlank(message = "El apellido no debe estar vacío")
+        String lastName,
+        @NotBlank(message = "El teléfono no debe estar vacío")
+        String phoneNumber,
+        @NotBlank(message = "El nombre de usuario no debe estas vacío")
+        String userName,
+        Boolean active
 ) {
 }
