@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import Headerimg from "@/public/images/headerimg.png";
 const Header = () => {
   return (
-    <header className="mx-4 my-10 flex flex-col items-center md:mx-24 md:my-28 md:flex-row">
+    <header className="container mx-4 my-10 flex flex-col items-center md:mx-24 md:my-28 md:flex-row">
       <div className="w-full md:w-1/2 md:text-start">
         <h1 className="text-3xl font-bold md:text-5xl">
           Crea tu landing page profesional en minutos.

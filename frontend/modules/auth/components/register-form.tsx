@@ -2,6 +2,7 @@
 
 import { zodResolver } from "@hookform/resolvers/zod";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 
@@ -29,8 +30,11 @@ const RegisterForm = () => {
     },
   });
 
+  const router = useRouter();
+
   function onSubmit(data: z.infer<typeof RegisterSchema>) {
     console.log(data);
+    router.push("/dashboard");
   }
 
   return (
@@ -109,7 +113,10 @@ const RegisterForm = () => {
                   <div className="flex items-center space-x-2">
                     <FormControl>
                       <div className="flex items-start space-x-2">
-                        <Checkbox id="terms2" />
+                        <Checkbox
+                          id="terms2"
+                          onCheckedChange={field.onChange}
+                        />
                         <label
                           htmlFor="terms2"
                           className="text-sm font-medium leading-tight peer-disabled:cursor-not-allowed peer-disabled:opacity-70"

@@ -18,7 +18,7 @@ const Item = ({ data }: Props) => {
   const isActive: boolean = pathName === data.url;
   return (
     <Link
-      href={data.url}
+      href={data?.url ? data?.url : ""}
       className={cn(
         buttonVariants({
           size: "lg",
