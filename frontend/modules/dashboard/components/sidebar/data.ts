@@ -16,10 +16,10 @@ const sidebarLinks: SidebarLinkType[] = [
   {
     title: "Productos",
     children: [
-      {
-        title: "Todos los productos",
-        url: "/dashboard/products",
-      },
+      // {
+      //   title: "Todos los productos",
+      //   url: "/dashboard/products",
+      // },
       {
         title: "Añadir productos",
         url: "/dashboard/products/add",

@@ -1,4 +1,4 @@
-import ProductForm from "./components/product-form";
+import ProductForm from "@/modules/products/add/components/product-form";
 
 const Add = () => {
   return (
