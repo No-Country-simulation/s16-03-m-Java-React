@@ -263,7 +263,7 @@ const handleDrop = (e: React.DragEvent<HTMLDivElement>) => {
                         >
                           Subir Imágenes
                         </label>
-                        <p className="text-muted-foreground text-center text-xs mt-4">
+                        <p className="hidden md:block text-muted-foreground text-center text-xs mt-4 ">
                           O arrastra desde el escritorio
                         </p>
                         <div className="relative mt-4 grid grid-cols-3 gap-4 w-80 h-60">
@@ -370,19 +370,19 @@ const handleDrop = (e: React.DragEvent<HTMLDivElement>) => {
               )}
             />
           </div>
-          <div className="flex justify-between">
-            <Button asChild type="submit" size="lg" className="rounded-xl bg-transparent text-muted-foreground border border-primary hover:text-secondary">
-              <Link href="/dashboard/products">Cancelar</Link>
-            </Button>
-            <div className="flex justify-end gap-4">
-              <Button type="submit" size="lg" className="rounded-xl bg-transparent font-light text-muted-foreground border border-primary hover:text-secondary">
-                Guardar como borrador
-              </Button>
-              <Button type="submit" size="lg" className="rounded-xl">
-                Publicar
-              </Button>
-            </div>
-          </div>
+        <div className="flex flex-col sm:flex-row justify-between gap-4">
+  <Button asChild type="submit" size="sm" className="rounded-xl bg-transparent text-muted-foreground border border-primary hover:text-secondary sm:size-lg">
+    <Link href="/dashboard/products">Cancelar</Link>
+  </Button>
+  <div className="flex flex-col sm:flex-row justify-end gap-2 sm:gap-4">
+    <Button type="submit" size="sm" className="rounded-xl bg-transparent font-light text-muted-foreground border border-primary hover:text-secondary sm:size-lg">
+      Guardar como borrador
+    </Button>
+    <Button type="submit" size="sm" className="rounded-xl sm:size-lg">
+      Publicar
+    </Button>
+  </div>
+</div>
         </form>
       </Form>
       {successMessage && (
