@@ -19,11 +19,11 @@ const FormLayout = ({ children }: Props) => {
           <Image src={Logo} alt="Logo" width={220} height={57} />
         </div>
         <div className="lg:w-2/2 mx-auto w-full p-8 text-start">
-          <h1 className="font-bold lg:text-5xl">
+          <h1 className="font-bold lg:text-5xl text-3xl">
             Crea tu landing page profesional en minutos.
           </h1>
           <div>
-            <p className="mt-10 text-xl lg:text-2xl">
+            <p className="mt-10 text-xl lg:text-xl">
               Haz <span className="font-bold">crecer tu negocio</span> y{" "}
               <span className="font-bold">multiplica tus ventas</span> e
               interacciones <span className="font-bold">gratis</span> y en

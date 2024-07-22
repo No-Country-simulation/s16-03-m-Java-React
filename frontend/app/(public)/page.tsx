@@ -1,4 +1,3 @@
-"use client";
 import Footer from "@/modules/marketing/components/footer-landing";
 import Header from "@/modules/marketing/components/header-landing";
 import Layout from "@/modules/marketing/components/landing-layout";
