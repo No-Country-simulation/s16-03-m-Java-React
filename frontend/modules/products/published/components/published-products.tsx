@@ -1,29 +1,38 @@
-
 import PublishedCard from "./published-card";
-import { PublishedType } from "../constants/published-data";
+import { PublishedProducts, ProductType } from "../constants/products-data";
+import { PublishedBest, BestType } from "../constants/best-data";
+import { PublishedDiscounts, DiscountType } from "../constants/discount-data";
 
-const PublishedProducts = () => {
-    const data: PublishedType = {
-        image: "/images/Published1.png",
-        title: "Product Title"
-    };
-    
+
+const PublishedData = () => {
     return (
-        <div>
+        <div className="pb-20">
             <div>
-                <h1>Recién Llegados</h1>
-                <PublishedCard data={data} />   
+                <h1 className="my-8 text-xl">Productos</h1>
+            <div className="flex flex-row gap-6">
+                {PublishedProducts.map((product: ProductType, id: number) => (
+                    <PublishedCard key={id} productData={product} />   
+                ))}
+            </div>
             </div>
             <div>
-                <h1>Los más vendidos</h1>
-                <PublishedCard data={data} /> 
+                <h1 className="my-8 text-xl">Los más vendidos</h1>
+            <div className="flex flex-row gap-6">
+                {PublishedBest.map((best: BestType, id: number) => (
+                    <PublishedCard key={id} bestData={best} />   
+                ))}
+            </div>
             </div>
             <div>
-                <h1>Descuentos</h1>
-                <PublishedCard data={data} /> 
+                <h1 className="my-8 text-xl">Descuentos</h1>
+            <div className="flex flex-row gap-6">
+                {PublishedDiscounts.map((discount: DiscountType, id: number) => (
+                    <PublishedCard key={id} discountData={discount} />   
+                ))}
+                </div>
             </div>
         </div>
-    )
-}
+    );
+};
 
-export default PublishedProducts;
+export default PublishedData;
