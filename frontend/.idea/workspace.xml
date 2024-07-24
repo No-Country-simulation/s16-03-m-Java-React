@@ -5,19 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6ba83ad2-4b07-4d5d-8201-634386298acb" name="Changes" comment="feat(frontend): added layout">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(public)/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(public)/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/ui/input.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/ui/input.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/auth/components/login-form.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/modules/auth/components/login-form.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/auth/components/register-form.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/modules/auth/components/register-form.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/auth/schemas/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/modules/auth/schemas/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/auth/schemas/login-schema.ts" beforeDir="false" afterPath="$PROJECT_DIR$/modules/auth/schemas/login-schema.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/auth/schemas/register-schema.ts" beforeDir="false" afterPath="$PROJECT_DIR$/modules/auth/schemas/register-schema.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/dashboard/components/header/components/button-user.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/modules/dashboard/components/header/components/button-user.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/dashboard/components/header/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/modules/dashboard/components/header/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,8 +26,12 @@
               <option name="branches">
                 <list>
                   <RecentBranch>
+                    <option name="branchName" value="joel-auth" />
+                    <option name="lastUsedInstant" value="1721843091" />
+                  </RecentBranch>
+                  <RecentBranch>
                     <option name="branchName" value="develop" />
-                    <option name="lastUsedInstant" value="1721656047" />
+                    <option name="lastUsedInstant" value="1721842966" />
                   </RecentBranch>
                 </list>
               </option>
@@ -57,25 +50,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;develop&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/github/personal/s16-03-m-Java-React/frontend/public/images&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.standard&quot;: &quot;&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;npm.dev.executor&quot;: &quot;Run&quot;,
-    &quot;npm.format.executor&quot;: &quot;Run&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;D:\\github\\personal\\s16-03-m-Java-React\\frontend\\node_modules\\typescript\\lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "joel-auth",
+    "last_opened_file_path": "D:/github/personal/s16-03-m-Java-React/frontend/public/images",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.standard": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.standard": "",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "npm.dev.executor": "Run",
+    "npm.format.executor": "Run",
+    "settings.editor.selected.configurable": "preferences.keymap",
+    "ts.external.directory.path": "D:\\github\\personal\\s16-03-m-Java-React\\frontend\\node_modules\\typescript\\lib",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\github\personal\s16-03-m-Java-React\frontend\public\images" />
@@ -145,7 +138,7 @@
       <workItem from="1721737926433" duration="9254000" />
       <workItem from="1721788709518" duration="4698000" />
       <workItem from="1721826534693" duration="3515000" />
-      <workItem from="1721830098919" duration="11428000" />
+      <workItem from="1721830098919" duration="11838000" />
     </task>
     <task id="LOCAL-00001" summary="feat(frontend): added layout">
       <option name="closed" value="true" />
