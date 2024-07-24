@@ -3,6 +3,7 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import { signIn } from "next-auth/react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 
@@ -24,18 +25,57 @@ const RegisterForm = () => {
   const form = useForm<z.infer<typeof RegisterSchema>>({
     resolver: zodResolver(RegisterSchema),
     defaultValues: {
+      name: "",
+      lastName: "",
       email: "",
       password: "",
+      phoneNumber: "",
+      userName: "",
       terms: false,
     },
   });
 
   const router = useRouter();
 
-  function onSubmit(data: z.infer<typeof RegisterSchema>) {
+  const onSubmit = async (data: z.infer<typeof RegisterSchema>) => {
     console.log(data);
+    const { name, lastName, email, password, phoneNumber, userName } = data;
+
+    const res = await fetch(`${process.env.COSMOS_API_URL}/user`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        name,
+        lastName,
+        email,
+        password,
+        phoneNumber,
+        userName,
+      }),
+    });
+
+    const responseAPI = await res.json();
+
+    if (!res.ok) {
+      console.log("errors=>", responseAPI);
+      return;
+    }
+
+    const responseNextAuth = await signIn("credentials", {
+      data,
+      redirect: false,
+    });
+
+    if (responseNextAuth?.error) {
+      console.log("errors=>", responseNextAuth.error.split(","));
+      return;
+    }
+
     router.push("/dashboard");
-  }
+    router.push("/dashboard");
+  };
 
   return (
     <div className="flex max-w-[424px] flex-col items-center justify-center px-4 lg:px-0">
@@ -47,19 +87,72 @@ const RegisterForm = () => {
           <div className="w-full space-y-6">
             <FormField
               control={form.control}
-              name="email"
+              name="name"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Nombre y apellido</FormLabel>
+                  <FormLabel>Nombres</FormLabel>
                   <FormControl>
                     <Input
                       className="bg-muted "
-                      placeholder="Escribe tu nombre y apellido"
+                      placeholder="Escribe tus nombres"
                       type="name"
                       {...field}
                     />
                   </FormControl>
-
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            <FormField
+              control={form.control}
+              name="lastName"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Apellidos</FormLabel>
+                  <FormControl>
+                    <Input
+                      className="bg-muted "
+                      placeholder="Escribe tus apellidos"
+                      type="lastName"
+                      {...field}
+                    />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            <FormField
+              control={form.control}
+              name="phoneNumber"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Teléfono</FormLabel>
+                  <FormControl>
+                    <Input
+                      className="bg-muted "
+                      placeholder="Escribe tu teléfono"
+                      type="phoneNumber"
+                      {...field}
+                    />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            <FormField
+              control={form.control}
+              name="userName"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Nombre de usuario</FormLabel>
+                  <FormControl>
+                    <Input
+                      className="bg-muted "
+                      placeholder="Escribe tu nombre de usuario"
+                      type="userName"
+                      {...field}
+                    />
+                  </FormControl>
                   <FormMessage />
                 </FormItem>
               )}
