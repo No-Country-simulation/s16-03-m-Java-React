@@ -21,12 +21,14 @@ import {
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import Up from "@/public/images/Up.png";
+import SuccessDialog from "@/modules/products/add/components/success-dialog";
+
 
 const ProductForm = () => {
   const [images, setImages] = useState<File[]>([]);
   const [imagePreviewUrls, setImagePreviewUrls] = useState<string[]>([]);
   const [dragOver, setDragOver] = useState(false);
-   const [successMessage, setSuccessMessage] = useState(""); 
+  const [showSuccessDialog, setShowSuccessDialog] = useState(false);
 
   const form = useForm<z.infer<typeof ProductSchema>>({
     resolver: zodResolver(ProductSchema),
@@ -97,12 +99,16 @@ const handleDrop = (e: React.DragEvent<HTMLDivElement>) => {
     setImagePreviewUrls((prevUrls) => prevUrls.filter((_, i) => i !== id));
   };
 
-  function onSubmit(data: z.infer<typeof ProductSchema>) {
-   setSuccessMessage("Producto agregado correctamente!"); 
-   
-    setTimeout(() => setSuccessMessage(""), 3000); 
-  
-}
+
+  const onSubmit = (data: z.infer<typeof ProductSchema>) => {
+    setShowSuccessDialog(true);
+    setTimeout(() => {
+      setShowSuccessDialog(false)}, 3000);
+      form.reset();
+      setImages([]);
+      setImagePreviewUrls([]);
+    
+  };
 
   return (
     <div className="flex w-full flex-col px-4 py-6 lg:px-0">
@@ -372,7 +378,7 @@ const handleDrop = (e: React.DragEvent<HTMLDivElement>) => {
           </div>
         <div className="flex flex-col sm:flex-row justify-between gap-4">
   <Button asChild type="submit" size="sm" className="rounded-xl bg-transparent text-muted-foreground border border-primary hover:text-secondary sm:size-lg">
-    <Link href="/dashboard/products">Cancelar</Link>
+    <Link href="/dashboard">Cancelar</Link>
   </Button>
   <div className="flex flex-col sm:flex-row justify-end gap-2 sm:gap-4">
     <Button type="submit" size="sm" className="rounded-xl bg-transparent font-light text-muted-foreground border border-primary hover:text-secondary sm:size-lg">
@@ -385,11 +391,13 @@ const handleDrop = (e: React.DragEvent<HTMLDivElement>) => {
 </div>
         </form>
       </Form>
-      {successMessage && (
-        <div className="mt-4 p-4 bg-green-200 text-green-800 rounded-xl">
-          {successMessage}
-        </div>
-      )}
+      
+        {showSuccessDialog && (
+          <div>
+            <SuccessDialog isOpen={showSuccessDialog} onClose={() => setShowSuccessDialog(false)} />
+          </div>
+        )}
+      
     </div>
   );
 };
