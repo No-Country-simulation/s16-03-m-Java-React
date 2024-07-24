@@ -9,7 +9,7 @@ type Props = {
 
 const TemplateCard = ({ data }: Props) => {
   return (
-    <Link href="#" className="group overflow-hidden rounded-2xl">
+    <Link href="templates/editor" className="group overflow-hidden rounded-2xl">
       <div className="grid gap-5">
         <picture className="overflow-hidden rounded-2xl">
           <Image

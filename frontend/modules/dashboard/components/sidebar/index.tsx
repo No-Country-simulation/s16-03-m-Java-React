@@ -18,8 +18,12 @@ import Logowhite from "@/public/images/Logowhite.png";
 const Sidebar = () => {
   const pathName: string = usePathname();
 
+  const shouldShowSidebar = pathName !== "/dashboard/templates/editor";
+
+  if (!shouldShowSidebar) return null;
+
   return (
-   <aside className="bg-primary-background sticky top-0 h-screen px-6 py-10 hidden md:block">
+    <aside className="bg-primary-background sticky top-0 h-screen px-6 py-10 hidden md:block">
       <div className="grid gap-4">
         {sidebarLinks?.length > 0 ? (
           <nav className="flex flex-col gap-2">
