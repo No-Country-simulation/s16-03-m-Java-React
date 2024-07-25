@@ -23,7 +23,6 @@ public class UsuarioController {
 
     @PostMapping
     @Transactional
-
     @Operation(summary = "Registra un nuevo usuario en la base de datos")
     public ResponseEntity<?> registrarUsuario(@RequestBody @Valid DatosRegistroUsuario datosRegistroUsuario) {
             try {
@@ -34,6 +33,13 @@ public class UsuarioController {
                 return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
                         .body("El correo electrónico ya está en uso");
             }
+    }
+
+    @GetMapping("/{mail}")
+    @Operation(summary = "Recibe el mail del usuario, lo busca en la base de datos y devuelve los datos del usuario")
+    public ResponseEntity<?> buscarPorMail(@PathVariable String email) {
+        var usuario = userService.buscarPorMail(email);
+        return ResponseEntity.ok(usuario);
     }
 
 

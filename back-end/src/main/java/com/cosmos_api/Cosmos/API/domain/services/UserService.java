@@ -1,17 +1,16 @@
 package com.cosmos_api.Cosmos.API.domain.services;
 
 import com.cosmos_api.Cosmos.API.aplication.dto.usuario.DatosRegistroUsuario;
+import com.cosmos_api.Cosmos.API.aplication.dto.usuario.DatosRespuestaUsuario;
 import com.cosmos_api.Cosmos.API.domain.entities.DetallesUsuario;
 import com.cosmos_api.Cosmos.API.domain.entities.Usuario;
 import com.cosmos_api.Cosmos.API.domain.repository.DetallesUsuarioRepository;
 import com.cosmos_api.Cosmos.API.domain.repository.UsuarioRepository;
 import com.cosmos_api.Cosmos.API.infraestructure.errores.excepciones.EmailAlreadyExistsException;
+import com.cosmos_api.Cosmos.API.infraestructure.errores.excepciones.UsuarioNoEncontradoException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
-
-import java.util.ArrayList;
-import java.util.List;
 
 @Service
 public class UserService {
@@ -49,5 +48,22 @@ public class UserService {
 
         detallesUsuarioRepository.save(detallesUsuario);
         return usuario;
+    }
+
+    public DatosRespuestaUsuario buscarPorMail(String email) {
+        Usuario usuario = usuarioRepository.findByEmail(email);
+        if (usuario != null) {
+            var detalles = detallesUsuarioRepository.buscarUsuario(usuario.getId());
+            var datoUsuario = new DatosRespuestaUsuario(
+                    usuario.getId(),
+                    usuario.getEmail(),
+                    detalles.getName(),
+                    detalles.getLastName(),
+                    detalles.getUserName(),
+                    detalles.getPhoneNumber(),
+                    detalles.getActive()
+            );
+            return datoUsuario;
+        } throw new UsuarioNoEncontradoException("Usuario no encontrado");
     }
 }
