@@ -1,15 +1,16 @@
 package com.cosmos_api.Cosmos.API.domain.entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import java.util.List;
+import java.util.ArrayList;
 
 @Entity
 @Getter
@@ -24,10 +25,34 @@ public class Products {
     private Long idproducts;
 
     @NotNull
-    private String title;
+    private String name;
+
+    private String brand;
+
+    private String category;
+
+    private String code;
+
+    private double price;
+
+    private int stock;
+
+    private String color;
+
+    private String discount;
+
+    private String tag;
 
     private String description;
 
-    private double cost;
+    @OneToMany(mappedBy = "products", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JsonManagedReference
+    @Builder.Default
+    private List<Images> imageList = new ArrayList<>();
+
+    @ManyToOne(targetEntity = DetallesUsuario.class, cascade = CascadeType.PERSIST)
+    @JoinColumn(name = "detalle_usuario_id")
+    @JsonBackReference
+    private DetallesUsuario detallesUsuario;
 
 }

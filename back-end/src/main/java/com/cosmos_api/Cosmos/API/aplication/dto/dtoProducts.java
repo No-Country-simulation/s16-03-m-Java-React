@@ -1,5 +1,6 @@
 package com.cosmos_api.Cosmos.API.aplication.dto;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.validation.constraints.Digits;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
@@ -12,6 +13,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.springframework.validation.annotation.Validated;
+import java.util.List;
 
 @Data
 @Getter
@@ -22,17 +24,29 @@ import org.springframework.validation.annotation.Validated;
 @Validated
 public class dtoProducts {
 
-    @NotBlank
-    @Size(min = 2, max = 20)
-    private String title;
+    @JsonIgnore
+    private Long idproducts;
+    
+    private String name;
 
-    @NotBlank
-    @Size(min = 2, max = 255)
+    private String brand;
+
+    private String category;
+
+    private String code;
+
+    private String price;
+
+    private String stock;
+
+    private String color;
+
+    private String discount;
+
+    private String tag;
+
     private String description;
-
-    @NotNull
-    @Digits(integer = 10, fraction = 2)
-    @PositiveOrZero
-    private double cost;
+    
+    private List<String> images;
 
 }

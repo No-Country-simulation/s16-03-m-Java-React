@@ -9,7 +9,7 @@ import org.springframework.stereotype.Repository;
 public interface RepositoryProducts extends JpaRepository<Products, Long>{
     public Optional<Products> findByIdproducts(long id);
 
-    public Optional<Products> findByTitle(String title);
+    public Optional<Products> findByName(String title);
 
-    public boolean existsByTitle(String title);
+    public boolean existsByName(String title);
 }

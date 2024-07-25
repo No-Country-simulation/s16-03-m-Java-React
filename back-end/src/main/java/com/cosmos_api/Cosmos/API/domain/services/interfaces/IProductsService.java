@@ -17,9 +17,9 @@ public interface IProductsService {
 
     public boolean existsByIdProducts(Long idproducts);
 
-    public Optional<Products> getByTitleProducts(String Title);
+    public Optional<Products> getByNameProducts(String Title);
 
     public Products editProducts(Long idproducts, dtoProducts dtoproducts);
 
-    public boolean existsByTitleProducts(String Title);
+    public boolean existsByNameProducts(String Title);
 }
