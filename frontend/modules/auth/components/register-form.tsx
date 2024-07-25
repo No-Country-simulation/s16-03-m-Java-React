@@ -1,243 +1,135 @@
 "use client";
 
-import { zodResolver } from "@hookform/resolvers/zod";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
-import { signIn } from "next-auth/react";
-import { useForm } from "react-hook-form";
-import { z } from "zod";
+import { useFormState } from "react-dom";
 
 import SocialMediaButtons from "./social-media-button";
 import { Button } from "@/components/ui/button";
-import { Checkbox } from "@/components/ui/checkbox";
-import {
-  Form,
-  FormControl,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-} from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import { RegisterSchema } from "@/modules/auth/schemas/register-schema";
+import { Label } from "@/components/ui/label";
+import { registerAction } from "@/modules/auth/actions/auth";
 
 const RegisterForm = () => {
-  const form = useForm<z.infer<typeof RegisterSchema>>({
-    resolver: zodResolver(RegisterSchema),
-    defaultValues: {
-      name: "",
-      lastName: "",
-      email: "",
-      password: "",
-      phoneNumber: "",
-      userName: "",
-      terms: false,
-    },
-  });
-
-  const router = useRouter();
-
-  const onSubmit = async (data: z.infer<typeof RegisterSchema>) => {
-    console.log(data);
-    const { name, lastName, email, password, phoneNumber, userName } = data;
-
-    const res = await fetch(`${process.env.COSMOS_API_URL}/user`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        name,
-        lastName,
-        email,
-        password,
-        phoneNumber,
-        userName,
-      }),
-    });
-
-    const responseAPI = await res.json();
-
-    if (!res.ok) {
-      console.log("errors=>", responseAPI);
-      return;
-    }
-
-    const responseNextAuth = await signIn("credentials", {
-      data,
-      redirect: false,
-    });
-
-    if (responseNextAuth?.error) {
-      console.log("errors=>", responseNextAuth.error.split(","));
-      return;
-    }
-
-    router.push("/dashboard");
-    router.push("/dashboard");
-  };
+  const [state, action] = useFormState(registerAction, undefined);
 
   return (
-    <div className="flex max-w-[424px] flex-col items-center justify-center px-4 lg:px-0">
+    <div className="flex w-full max-w-[424px] flex-col px-4 lg:px-0">
       <div className="mb-10 w-full">
         <h1 className="text-3xl font-bold ">Crear una cuenta</h1>
       </div>
-      <Form {...form}>
-        <form className="space-y-12" onSubmit={form.handleSubmit(onSubmit)}>
-          <div className="w-full space-y-6">
-            <FormField
-              control={form.control}
+
+      <form className="space-y-12" action={action}>
+        <div className="w-full space-y-6">
+          <div className="space-y-2">
+            <Label htmlFor="name">Nombres</Label>
+            <Input
+              id="name"
               name="name"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Nombres</FormLabel>
-                  <FormControl>
-                    <Input
-                      className="bg-muted "
-                      placeholder="Escribe tus nombres"
-                      type="name"
-                      {...field}
-                    />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
+              className="bg-muted"
+              placeholder="Escribe tus nombres"
+              type="text"
             />
-            <FormField
-              control={form.control}
+            {state?.errors?.name && (
+              <p className="text-sm text-red-500">{state.errors.name}</p>
+            )}
+          </div>
+
+          <div className="space-y-2">
+            <Label htmlFor="lastName">Apellidos</Label>
+            <Input
+              id="lastName"
               name="lastName"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Apellidos</FormLabel>
-                  <FormControl>
-                    <Input
-                      className="bg-muted "
-                      placeholder="Escribe tus apellidos"
-                      type="lastName"
-                      {...field}
-                    />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
+              className="bg-muted"
+              placeholder="Escribe tus apellidos"
+              type="text"
             />
-            <FormField
-              control={form.control}
-              name="phoneNumber"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Teléfono</FormLabel>
-                  <FormControl>
-                    <Input
-                      className="bg-muted "
-                      placeholder="Escribe tu teléfono"
-                      type="phoneNumber"
-                      {...field}
-                    />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
+            {state?.errors?.lastName && (
+              <p className="text-sm text-red-500">{state.errors.lastName}</p>
+            )}
+          </div>
+
+          <div className="space-y-2">
+            <Label htmlFor="email">E-mail</Label>
+            <Input
+              id="lastName"
+              name="lastName"
+              className="bg-muted"
+              placeholder="Escribe tu e-mail"
+              type="email"
             />
-            <FormField
-              control={form.control}
-              name="userName"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Nombre de usuario</FormLabel>
-                  <FormControl>
-                    <Input
-                      className="bg-muted "
-                      placeholder="Escribe tu nombre de usuario"
-                      type="userName"
-                      {...field}
-                    />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-            <FormField
-              control={form.control}
-              name="email"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>E-mail</FormLabel>
-                  <FormControl>
-                    <Input
-                      className="bg-muted"
-                      placeholder="Escribe un e-mail"
-                      type="email"
-                      {...field}
-                    />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-            <FormField
-              control={form.control}
+            {state?.errors?.email && (
+              <p className="text-sm text-red-500">{state.errors.email}</p>
+            )}
+          </div>
+
+          <div className="space-y-2">
+            <Label htmlFor="password">Contraseña</Label>
+            <Input
+              id="password"
               name="password"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Contraseña</FormLabel>
-                  <FormControl>
-                    <Input
-                      className="bg-muted"
-                      placeholder="Escribe una contraseña"
-                      type="password"
-                      {...field}
-                    />
-                  </FormControl>
-                  <p className=" text-muted-foreground text-xs font-light">
-                    Debe tener mas de 8 carácteres
-                  </p>
-
-                  <FormMessage />
-                </FormItem>
-              )}
+              className="bg-muted"
+              placeholder="Escribe tu contraseña"
+              type="password"
             />
-
-            <FormField
-              control={form.control}
-              name="terms"
-              render={({ field }) => (
-                <FormItem className="flex flex-col space-x-3 ">
-                  <div className="flex items-center space-x-2">
-                    <FormControl>
-                      <div className="flex items-start space-x-2">
-                        <Checkbox
-                          id="terms2"
-                          onCheckedChange={field.onChange}
-                        />
-                        <label
-                          htmlFor="terms2"
-                          className="text-sm font-medium leading-tight peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-                        >
-                          Al crear la cuenta se aceptan los{" "}
-                          <strong>términos y condiciones</strong> y nuestra{" "}
-                          <strong>política de privacidad</strong>.
-                        </label>
-                      </div>
-                    </FormControl>
-                  </div>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
+            {state?.errors?.password && (
+              <p className="text-sm text-red-500">{state.errors.password}</p>
+            )}
           </div>
 
-          <div className="flex justify-center">
-            <Button
-              type="submit"
-              size="lg"
-              className="mx-auto w-full rounded-full"
-            >
-              Registrarme
-            </Button>
+          <div className="space-y-2">
+            <Label htmlFor="password">Contraseña</Label>
+            <Input
+              id="password"
+              name="password"
+              className="bg-muted"
+              placeholder="Escribe tu contraseña"
+              type="password"
+            />
+            {state?.errors?.password && (
+              <p className="text-sm text-red-500">{state.errors.password}</p>
+            )}
           </div>
-        </form>
-      </Form>
+
+          <div className="space-y-2">
+            <Label htmlFor="phoneNumber">Teléfono</Label>
+            <Input
+              id="phoneNumber"
+              name="phoneNumber"
+              className="bg-muted"
+              placeholder="Escribe tu teléfono"
+              type="text"
+            />
+            {state?.errors?.phoneNumber && (
+              <p className="text-sm text-red-500">{state.errors.phoneNumber}</p>
+            )}
+          </div>
+
+          <div className="space-y-2">
+            <Label htmlFor="phoneNumber">Nombre de usuario</Label>
+            <Input
+              id="userName"
+              name="userName"
+              className="bg-muted"
+              placeholder="Escribe tu teléfono"
+              type="text"
+            />
+            {state?.errors?.userName && (
+              <p className="text-sm text-red-500">{state.errors.userName}</p>
+            )}
+          </div>
+        </div>
+
+        <div className="flex justify-center">
+          <Button
+            type="submit"
+            size="lg"
+            className="mx-auto w-full rounded-full"
+          >
+            Registrarme
+          </Button>
+        </div>
+      </form>
+
       <SocialMediaButtons />
       <p className="text-foreground mt-10 text-center text-sm">
         ¿Ya tenes una cuenta?

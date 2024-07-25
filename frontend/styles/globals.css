@@ -67,10 +67,6 @@
     --input: 0 0% 14.9%;
     --ring: 0 0% 83.1%;
   }
-  .shadow-custom-purple {
-    box-shadow: 0 4px 6px -1px hsl(263, 49%, 55%, 0.3),
-      0 2px 4px -2px hsl(263, 49%, 55%, 0.3);
-  }
 }
 
 @layer base {
@@ -79,5 +75,10 @@
   }
   body {
     @apply bg-background text-foreground font-poppins;
+  }
+
+  .shadow-custom-purple {
+    box-shadow: 0 4px 6px -1px hsl(263, 49%, 55%, 0.3),
+    0 2px 4px -2px hsl(263, 49%, 55%, 0.3);
   }
 }

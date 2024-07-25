@@ -10,8 +10,11 @@ export type FormState =
   | {
       errors?: {
         name?: string[];
+        lastName?: string[];
         email?: string[];
         password?: string[];
+        phoneNumber?: string[];
+        userName?: string[];
       };
       message?: string;
     }

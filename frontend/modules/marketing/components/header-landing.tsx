@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 
 import { Button } from "@/components/ui/button";
 import Headerimg from "@/public/images/headerimg.png";
@@ -22,8 +23,8 @@ const Header = () => {
             pasos.
           </p>
         </div>
-        <Button className="mt-8 rounded-full md:mt-14">
-          Crea tu landing gratis
+        <Button asChild className="mt-8 rounded-full md:mt-14">
+          <Link href="/login">Crea tu landing gratis</Link>
         </Button>
         <div className="mt-8 flex flex-col md:mt-14 md:flex-row">
           <div className="mb-4 mr-4 flex items-start md:mb-0 md:mr-8 md:flex-col lg:flex-col">

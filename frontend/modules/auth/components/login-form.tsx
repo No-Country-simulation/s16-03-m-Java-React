@@ -1,19 +1,13 @@
 "use client";
 
-/*import { zodResolver } from "@hookform/resolvers/zod";*/
 import Link from "next/link";
-/*import { useSearchParams } from "next/navigation";*/
 import { useFormState } from "react-dom";
-/*import { useForm } from "react-hook-form";
-import { z } from "zod";*/
 
 import SocialMediaButtons from "./social-media-button";
-/*import { LoginSchema } from "../schemas";*/
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { loginAction } from "@/modules/auth/actions/auth";
 import { LoginButton } from "@/modules/auth/components/login-button";
-//import { authService } from "@/modules/auth/services";
 
 const LoginForm = () => {
   const [state, action] = useFormState(loginAction, undefined);
