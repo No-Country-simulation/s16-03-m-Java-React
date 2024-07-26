@@ -5,46 +5,35 @@ import { FC } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
-import SocialMediaFooter from "./social-media-footer";
+import SocialMediaFooter from "../../marketing/components/social-media-footer";
 import Cosmosfot from "@/public/images/Cosmosfoot.png";
-// import Infofoot from "@/public/images/Infofoot.png";
 import Logofoot from "@/public/images/Logofoot.png";
 
 const Footer: FC = () => {
   return (
-    <footer className="bg-primary text-destructive-foreground relative h-48 overflow-hidden p-4">
-      <div className=" absolute bottom-0 -skew-y-6 transform">
+    <footer className="bg-primary text-destructive-foreground relative w-full  overflow-hidden md:h-48">
+      <div className="absolute bottom-0 left-0 -skew-y-6 transform">
         <Image src={Logofoot} alt="Logo footer" width={260} height={260} />
       </div>
-      <div>
-        <div className="flex flex-row justify-evenly px-32 pt-6">
-          <div className="flex flex-col">
-            <div>
+
+      <div className="container mx-auto px-4 py-8 md:py-8 ">
+        <div className="flex flex-col justify-center md:flex-row">
+          <div className="mx-4 mb-8 flex flex-col items-start md:mb-0 ">
+            <div className="mb-4">
               <Image
-                className="mt-4"
                 src={Cosmosfot}
                 alt="Logo footer"
                 width={150}
                 height={50}
               />
             </div>
-
-            <div>
-              {/* <Image
-                className="mt-4"
-                src={Infofoot}
-                alt="Infofoot"
-                width={150}
-                height={50}
-              /> */}
-              <p className="text-secondary ml-1 mt-2  w-32 text-xs font-light ">
-                Tu landing page en minutos
-              </p>
-            </div>
+            <p className="text-secondary text-xs font-light">
+              Donde nacen tus ideas
+            </p>
           </div>
 
-          <div className="text-secondary flex flex-col">
-            <h1 className=" mb-2 text-sm ">Secciones</h1>
+          <div className="text-secondary  mx-4 mb-8 flex flex-col items-start md:mb-0 md:ml-16">
+            <h1 className="mb-2 text-sm">Secciones</h1>
             <Link href="/" className="mb-1 text-xs font-light">
               Inicio
             </Link>
@@ -55,7 +44,8 @@ const Footer: FC = () => {
               Planes
             </Link>
           </div>
-          <div className="text-secondary flex flex-col">
+
+          <div className="text-secondary  mx-4 mb-8 flex flex-col items-start md:mb-0 md:ml-16">
             <h1 className="mb-2 text-sm">Ayuda y soporte</h1>
             <Link href="/contacto" className="mb-1 text-xs font-light">
               Contactanos
@@ -70,14 +60,13 @@ const Footer: FC = () => {
               Quiénes somos
             </Link>
           </div>
-          <div className="text-secondary flex flex-col">
-            <h1 className=" text-sm ">Seguinos en nuestras redes</h1>
+
+          <div className="text-secondary  mx-4 mb-8 flex flex-col items-start md:mb-0 md:ml-16 ">
+            <h1 className="mb-2 text-sm">Seguinos en nuestras redes</h1>
             <SocialMediaFooter />
           </div>
         </div>
-      </div>
 
-      <div>
         <p className="pt-6 text-center text-xs font-light">
           {new Date().getFullYear()} Equipo Cosmos. ∙ Todos los derechos
           reservados.

@@ -1,15 +1,19 @@
-import Footer from "@/modules/auth/components/footer-landing";
-import Header from "@/modules/auth/components/header-landing";
-import Navbar from "@/modules/auth/components/navbar-landing";
-import Section from "@/modules/auth/components/section-landing";
+"use client";
+import Footer from "@/modules/marketing/components/footer-landing";
+import Header from "@/modules/marketing/components/header-landing";
+import Layout from "@/modules/marketing/components/landing-layout";
+import Navbar from "@/modules/marketing/components/navbar-landing";
+import Section from "@/modules/marketing/components/section-landing";
 
 export default function Home() {
   return (
     <>
-      <Navbar />
-      <Header />
-      <Section />
-      <Footer />
+      <Layout>
+        <Navbar />
+        <Header />
+        <Section />
+        <Footer />
+      </Layout>
     </>
   );
 }
