@@ -28,9 +28,9 @@ public class DetallesUsuario {
     private Boolean active;
 
     // relación OneToOne con Usuario
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "usuario_id", referencedColumnName = "id")
-    private Usuario usuarioId;
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "usuario_id")
+    private Usuario usuario;
 
     @OneToMany(mappedBy = "detallesUsuario", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @JsonManagedReference

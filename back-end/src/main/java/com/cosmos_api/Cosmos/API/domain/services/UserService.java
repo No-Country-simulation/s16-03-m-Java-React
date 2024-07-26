@@ -39,24 +39,25 @@ public class UserService {
 
         // Crear instancia de DetalleUsuario
         DetallesUsuario detallesUsuario = new DetallesUsuario();
-        detallesUsuario.setUsuarioId(usuario);
         detallesUsuario.setName(datosRegistroUsuario.name());
         detallesUsuario.setLastName(datosRegistroUsuario.lastName());
         detallesUsuario.setUserName(datosRegistroUsuario.userName());
         detallesUsuario.setPhoneNumber(datosRegistroUsuario.phoneNumber());
         detallesUsuario.setActive(true);
 
+        detallesUsuario.setUsuario(usuario);
+
         detallesUsuarioRepository.save(detallesUsuario);
         return usuario;
     }
 
-    public DatosRespuestaUsuario buscarPorMail(String email) {
-        Usuario usuario = usuarioRepository.findByEmail(email);
+    public DatosRespuestaUsuario buscarPorMail(Long id) {
+        var usuario = usuarioRepository.findById(id);
         if (usuario != null) {
-            var detalles = detallesUsuarioRepository.buscarUsuario(usuario.getId());
+            DetallesUsuario detalles = detallesUsuarioRepository.findByUsuarioId(id);
             var datoUsuario = new DatosRespuestaUsuario(
-                    usuario.getId(),
-                    usuario.getEmail(),
+                    id,
+                    usuario.get().getEmail(),
                     detalles.getName(),
                     detalles.getLastName(),
                     detalles.getUserName(),
