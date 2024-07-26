@@ -30,7 +30,7 @@ const PublishedCard = ({ productData, bestData, discountData }: PublishedCardPro
                     -{discountPercentage}%
                 </p>
             )}
-            <Image src={data.image} alt={data.title} width={286} height={360}/>
+            <Image src={data.image} alt={data.title} width={186} height={260}/>
             <div className="my-4">
                 <h2 className="text-lg">{data.title}</h2>
                 <div className="flex flex-row my-2">

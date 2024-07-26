@@ -109,7 +109,6 @@ const Section = () => {
           online.
         </p>
       </div>
-
       <div className="relative">
         <Swiper
           effect={"coverflow"}
@@ -140,7 +139,7 @@ const Section = () => {
           className="mySwiper !relative !py-20"
         >
           <SwiperSlide>
-            <div className="border-primary  shadow-custom-purple  bg-primary-foreground mx-auto flex flex-col items-start justify-center rounded-lg border object-cover p-10">
+            <div className="border-primary shadow-cards-purple bg-primary-foreground mx-auto flex flex-col items-start justify-center rounded-lg border object-cover p-10">
               <p>
                 Elegimos Cosmos porque es fácil de usar y amigable. Nosotros
                 fuimos quienes creamos la tienda: seleccionamos el diseño,
@@ -161,9 +160,8 @@ const Section = () => {
               </div>
             </div>
           </SwiperSlide>
-
           <SwiperSlide>
-            <div className="border-primary   shadow-custom-purple  bg-primary-foreground mx-auto flex flex-col items-start justify-center rounded-lg border object-cover p-10">
+            <div className="border-primary shadow-cards-purple bg-primary-foreground mx-auto flex flex-col items-start justify-center rounded-lg border object-cover p-10">
               <p>
                 Empezamos a llegar a personas que estaban cerca de nuestros
                 locales físicos. Cosmos hizo que Woopy dejara de pensarse como
@@ -184,7 +182,7 @@ const Section = () => {
             </div>
           </SwiperSlide>
           <SwiperSlide>
-            <div className="border-primary  shadow-custom-purple  bg-primary-foreground mx-auto flex flex-col items-start justify-center rounded-lg border object-cover p-10">
+            <div className="border-primary shadow-cards-purple bg-primary-foreground mx-auto flex flex-col items-start justify-center rounded-lg border object-cover p-10">
               <p>
                 Decidimos usar Cosmos porque nos ofrecía la flexibilidad que
                 necesitábamos. Pudimos personalizar cada detalle de nuestra
@@ -207,7 +205,7 @@ const Section = () => {
             </div>
           </SwiperSlide>
           <SwiperSlide>
-            <div className=" border-primary  shadow-custom-purple  bg-primary-foreground mx-auto flex flex-col items-start justify-center rounded-lg border object-cover p-10">
+            <div className=" border-primary  shadow-cards-purple bg-primary-foreground mx-auto flex flex-col items-start justify-center rounded-lg border object-cover p-10">
               <p>
                 Gracias a Cosmos, hemos podido captar la atención de un público
                 mucho más amplio. La plataforma es intuitiva y las opciones de
@@ -229,7 +227,7 @@ const Section = () => {
             </div>
           </SwiperSlide>
           <SwiperSlide>
-            <div className=" border-primary  shadow-custom-purple  bg-primary-foreground mx-auto flex flex-col items-start justify-center rounded-lg border object-cover p-10">
+            <div className=" border-primary  shadow-cards-purple bg-primary-foreground mx-auto flex flex-col items-start justify-center rounded-lg border object-cover p-10">
               <p>
                 Cosmos nos permitió diseñar una landing page que refleja
                 perfectamente nuestra marca. La facilidad de uso y las
@@ -251,7 +249,6 @@ const Section = () => {
               </div>
             </div>
           </SwiperSlide>
-
           <Button
             variant="ghost"
             size="icon"

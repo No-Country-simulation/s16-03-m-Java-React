@@ -77,8 +77,16 @@
     @apply bg-background text-foreground font-poppins;
   }
 
-  .shadow-custom-purple {
+  .shadow-cards-purple {
     box-shadow: 0 4px 6px -1px hsl(263, 49%, 55%, 0.3),
     0 2px 4px -2px hsl(263, 49%, 55%, 0.3);
   }
+}
+
+.shadow-button-purple {
+  box-shadow: 
+    0 4px 8px -1px hsl(263, 49%, 55%, 0.3),
+    0 -4px 8px -1px hsl(263, 49%, 55%, 0.3), 
+    4px 0 8px -1px hsl(263, 49%, 55%, 0.3),  
+    -4px 0 8px -1px hsl(263, 49%, 55%, 0.3); 
 }
