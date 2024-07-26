@@ -28,6 +28,7 @@ public class UsuarioController {
 
     @PostMapping
     @Transactional
+
     @Operation(summary = "Registra un nuevo usuario en la base de datos")
     public ResponseEntity<?> registrarUsuario(@RequestBody @Valid DatosRegistroUsuario datosRegistroUsuario) {
             try {

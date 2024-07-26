@@ -6,35 +6,14 @@
   <component name="ChangeListManager">
     <list default="true" id="6ba83ad2-4b07-4d5d-8201-634386298acb" name="Changes" comment="feat(frontend): added layout">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(private)/dashboard/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(private)/dashboard/layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(private)/dashboard/products/add/components/product-form.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(private)/dashboard/products/add/components/product-form.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(private)/dashboard/products/add/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(private)/dashboard/products/add/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(private)/dashboard/products/add/schemas/product-schema.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/(private)/dashboard/products/add/schemas/product-schema.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(private)/dashboard/products/components/Heading.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(private)/dashboard/products/components/Heading.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(private)/dashboard/products/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(private)/dashboard/products/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(private)/dashboard/templates/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(private)/dashboard/templates/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(public)/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(public)/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/ui/icon/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/ui/icon/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/ui/textarea.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/ui/textarea.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/dashboard/components/button-user.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/modules/dashboard/components/button-user.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/dashboard/components/header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/modules/dashboard/components/header.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/dashboard/components/sidebar/components/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/modules/dashboard/components/sidebar/components/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/dashboard/components/sidebar/components/item.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/modules/dashboard/components/sidebar/components/item.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/dashboard/components/sidebar/data.ts" beforeDir="false" afterPath="$PROJECT_DIR$/modules/dashboard/components/sidebar/data.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/auth/actions/auth.ts" beforeDir="false" afterPath="$PROJECT_DIR$/modules/auth/actions/auth.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/auth/components/login-form.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/modules/auth/components/login-form.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/auth/components/register-form.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/modules/auth/components/register-form.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/modules/dashboard/init/components/heading.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/modules/dashboard/init/components/heading.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/dashboard/init/components/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/modules/dashboard/init/components/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/dashboard/init/components/panel/components/control-card.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/modules/dashboard/init/components/panel/components/control-card.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/dashboard/init/components/panel/components/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/modules/dashboard/init/components/panel/components/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/dashboard/init/components/panel/data.ts" beforeDir="false" afterPath="$PROJECT_DIR$/modules/dashboard/init/components/panel/data.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/dashboard/init/components/panel/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/modules/dashboard/init/components/panel/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/dashboard/templates/components/heading.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/modules/dashboard/templates/components/heading.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/dashboard/templates/components/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/modules/dashboard/templates/components/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/dashboard/templates/components/search.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/modules/dashboard/templates/components/search.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/dashboard/templates/components/template-card.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/modules/dashboard/templates/components/template-card.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/dashboard/templates/constants/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/modules/dashboard/templates/constants/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/dashboard/templates/constants/template-data.ts" beforeDir="false" afterPath="$PROJECT_DIR$/modules/dashboard/templates/constants/template-data.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/dashboard/templates/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/modules/dashboard/templates/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/marketing/components/section-landing.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/modules/marketing/components/section-landing.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/dashboard/init/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/modules/dashboard/init/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/marketing/components/header-landing.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/modules/marketing/components/header-landing.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/marketing/components/navbar-landing.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/modules/marketing/components/navbar-landing.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/styles/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles/globals.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -55,16 +34,16 @@
               <option name="branches">
                 <list>
                   <RecentBranch>
-                    <option name="branchName" value="joel-sidebar" />
-                    <option name="lastUsedInstant" value="1721270384" />
+                    <option name="branchName" value="joel-auth-register" />
+                    <option name="lastUsedInstant" value="1721910442" />
                   </RecentBranch>
                   <RecentBranch>
-                    <option name="branchName" value="joel-main-layout" />
-                    <option name="lastUsedInstant" value="1721138791" />
+                    <option name="branchName" value="joel-auth" />
+                    <option name="lastUsedInstant" value="1721843091" />
                   </RecentBranch>
                   <RecentBranch>
                     <option name="branchName" value="develop" />
-                    <option name="lastUsedInstant" value="1721138790" />
+                    <option name="lastUsedInstant" value="1721842966" />
                   </RecentBranch>
                 </list>
               </option>
@@ -83,35 +62,35 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;joel-sidebar&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/github/personal/s16-03-m-Java-React/frontend/public/images&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.standard&quot;: &quot;&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;npm.dev.executor&quot;: &quot;Run&quot;,
-    &quot;npm.format.executor&quot;: &quot;Run&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;D:\\github\\personal\\s16-03-m-Java-React\\frontend\\node_modules\\typescript\\lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "joel-auth-register",
+    "last_opened_file_path": "D:/github/personal/s16-03-m-Java-React/frontend/public/images",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.standard": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.standard": "",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "npm.dev.executor": "Run",
+    "npm.format.executor": "Run",
+    "settings.editor.selected.configurable": "preferences.keymap",
+    "ts.external.directory.path": "D:\\github\\personal\\s16-03-m-Java-React\\frontend\\node_modules\\typescript\\lib",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\github\personal\s16-03-m-Java-React\frontend\public\images" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\github\personal\s16-03-m-Java-React\frontend\modules\auth\action" />
+      <recent name="D:\github\personal\s16-03-m-Java-React\frontend\app" />
+      <recent name="D:\github\personal\s16-03-m-Java-React\frontend\app\(private)\dashboard" />
       <recent name="D:\github\personal\s16-03-m-Java-React\frontend\public\images" />
       <recent name="D:\github\personal\s16-03-m-Java-React\frontend\modules\dashboard\components\sidebar" />
-      <recent name="D:\github\personal\s16-03-m-Java-React\frontend\components\layouts" />
-      <recent name="D:\github\personal\s16-03-m-Java-React\frontend\components" />
-      <recent name="D:\github\personal\s16-03-m-Java-React\frontend\app\(private)\dashboard\products" />
     </key>
   </component>
   <component name="RunManager" selected="npm.dev">
@@ -165,6 +144,14 @@
       <workItem from="1721221401257" duration="4724000" />
       <workItem from="1721269880175" duration="6399000" />
       <workItem from="1721305589937" duration="2931000" />
+      <workItem from="1721656016915" duration="3152000" />
+      <workItem from="1721686989547" duration="5664000" />
+      <workItem from="1721694552673" duration="1325000" />
+      <workItem from="1721737926433" duration="9254000" />
+      <workItem from="1721788709518" duration="4698000" />
+      <workItem from="1721826534693" duration="3515000" />
+      <workItem from="1721830098919" duration="11838000" />
+      <workItem from="1721910401720" duration="5436000" />
     </task>
     <task id="LOCAL-00001" summary="feat(frontend): added layout">
       <option name="closed" value="true" />
