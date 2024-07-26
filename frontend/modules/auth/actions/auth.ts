@@ -20,10 +20,10 @@ export type FormState =
     }
   | undefined;
 
-export async function registerAction(
+export const registerAction = async (
   state: FormState,
   formData: FormData
-): Promise<FormState> {
+): Promise<FormState> => {
   const validatedFields = RegisterSchema.safeParse({
     name: formData.get("name"),
     lastName: formData.get("lastName"),
@@ -32,6 +32,9 @@ export async function registerAction(
     phoneNumber: formData.get("phoneNumber"),
     userName: formData.get("userName"),
   });
+
+  console.log("validatedFields=>", validatedFields.error);
+  const errorMessage = { message: "Invalid login credentials." };
 
   if (!validatedFields.success) {
     return {
@@ -47,10 +50,9 @@ export async function registerAction(
     });
     const user = await res.json();
 
-    if (!user) {
-      return {
-        message: "An error occurred while creating your account.",
-      };
+    if (!res.ok || !user) {
+      console.error("ERROR FINDING USER: ", res.statusText);
+      return errorMessage;
     }
 
     await createSession(user.jwtToken);
@@ -58,7 +60,7 @@ export async function registerAction(
     console.error("Error in authorize:", error);
     throw error;
   }
-}
+};
 
 export const loginAction = async (
   state: FormState,

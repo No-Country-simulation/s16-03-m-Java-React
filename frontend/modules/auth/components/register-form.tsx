@@ -4,10 +4,10 @@ import Link from "next/link";
 import { useFormState } from "react-dom";
 
 import SocialMediaButtons from "./social-media-button";
-import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { registerAction } from "@/modules/auth/actions/auth";
+import { RegisterButton } from "@/modules/auth/components/register-button";
 
 const RegisterForm = () => {
   const [state, action] = useFormState(registerAction, undefined);
@@ -51,28 +51,14 @@ const RegisterForm = () => {
           <div className="space-y-2">
             <Label htmlFor="email">E-mail</Label>
             <Input
-              id="lastName"
-              name="lastName"
+              id="email"
+              name="email"
               className="bg-muted"
               placeholder="Escribe tu e-mail"
               type="email"
             />
             {state?.errors?.email && (
               <p className="text-sm text-red-500">{state.errors.email}</p>
-            )}
-          </div>
-
-          <div className="space-y-2">
-            <Label htmlFor="password">Contraseña</Label>
-            <Input
-              id="password"
-              name="password"
-              className="bg-muted"
-              placeholder="Escribe tu contraseña"
-              type="password"
-            />
-            {state?.errors?.password && (
-              <p className="text-sm text-red-500">{state.errors.password}</p>
             )}
           </div>
 
@@ -105,28 +91,24 @@ const RegisterForm = () => {
           </div>
 
           <div className="space-y-2">
-            <Label htmlFor="phoneNumber">Nombre de usuario</Label>
+            <Label htmlFor="userName">Nombre de usuario</Label>
             <Input
               id="userName"
               name="userName"
               className="bg-muted"
-              placeholder="Escribe tu teléfono"
+              placeholder="Escribe tu usuario"
               type="text"
             />
             {state?.errors?.userName && (
               <p className="text-sm text-red-500">{state.errors.userName}</p>
             )}
           </div>
-        </div>
-
-        <div className="flex justify-center">
-          <Button
-            type="submit"
-            size="lg"
-            className="mx-auto w-full rounded-full"
-          >
-            Registrarme
-          </Button>
+          {state?.message && (
+            <p className="text-sm text-red-500">{state.message}</p>
+          )}
+          <div>
+            <RegisterButton />
+          </div>
         </div>
       </form>
 

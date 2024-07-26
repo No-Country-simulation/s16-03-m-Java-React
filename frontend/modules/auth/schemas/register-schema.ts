@@ -7,7 +7,7 @@ export const RegisterSchema = z.object({
   password: z.string().min(8, "La contraseña debe tener al menos 8 caracteres"),
   phoneNumber: z.string().min(8, "Mínimo 8 caracteres"),
   userName: z.string().min(8, "Mínimo 8 caracteres"),
-  terms: z.boolean().refine((bool) => bool, {
+  /*terms: z.boolean().refine((bool) => bool, {
     message: "Debes aceptar los términos y condiciones",
-  }),
+  }),*/
 });
