@@ -1,19 +1,21 @@
 "use client";
+
 import { ReactNode } from "react";
+
+import { usePathname } from "next/navigation";
 
 import { Layout } from "@/components/layouts";
 import Header from "@/modules/dashboard/components/header/index";
 import Sidebar from "@/modules/dashboard/components/sidebar";
 import Footer from "@/modules/marketing/components/footer-landing";
 import { poppins } from "@/styles/font";
-import { usePathname } from "next/navigation";
 
 type Props = {
   children: ReactNode;
 };
 
 const RootLayout = ({ children }: Props) => {
-   const pathName = usePathname();
+  const pathName = usePathname();
   const showSidebar = pathName !== "/dashboard/templates/editor";
   return (
     <html lang="en">
@@ -21,7 +23,7 @@ const RootLayout = ({ children }: Props) => {
         <Header />
         <Layout variant={showSidebar ? "width_sidebar" : "simple"}>
           <Sidebar />
-          <Layout asChild>
+          <Layout asChild variant={!showSidebar ? "simple" : "default"}>
             <main>{children}</main>
           </Layout>
         </Layout>

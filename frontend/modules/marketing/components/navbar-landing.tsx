@@ -61,7 +61,6 @@ const Navbar: FC = () => {
             />
           </div>
         </Link>
-
         <div className="hidden flex-grow justify-center space-x-4 md:flex">
           <ul className="flex space-x-4">
             <li>
@@ -98,7 +97,6 @@ const Navbar: FC = () => {
             </li>
           </ul>
         </div>
-
         <div className="hidden items-center space-x-4 md:flex">
           <Link
             className="bg-background text-primary border-primary rounded-full border-2 px-4 py-1 text-xs md:px-6 md:py-1 md:text-base"
@@ -113,7 +111,6 @@ const Navbar: FC = () => {
             Registrarse
           </Link>
         </div>
-
         <div className="flex items-center md:hidden">
           <button
             onClick={toggleMobileMenu}
@@ -127,7 +124,6 @@ const Navbar: FC = () => {
           </button>
         </div>
       </div>
-
       {isMobileScreen && mobileMenuOpen && (
         <div className="bg-primary-background absolute left-0 top-full h-screen w-3/4 shadow-md">
           <ul

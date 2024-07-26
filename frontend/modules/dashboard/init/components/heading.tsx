@@ -19,7 +19,7 @@ const Heading = () => {
       </div>
       <Button
         asChild
-        className="shadow-custom-purple mx-auto w-full max-w-2xl rounded-lg py-8 text-xl"
+        className="shadow-button-purple mx-auto w-full max-w-2xl rounded-lg py-8 text-xl"
         size="lg"
       >
         <Link href="dashboard/templates/">Crear mi web</Link>

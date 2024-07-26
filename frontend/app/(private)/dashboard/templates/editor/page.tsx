@@ -1,13 +1,11 @@
-
 import Editor from "@/modules/dashboard/editor";
-
 
 const page = () => {
   return (
     <div className="">
-      <Editor/>
+      <Editor />
     </div>
-  )
-}
+  );
+};
 
-export default page
+export default page;

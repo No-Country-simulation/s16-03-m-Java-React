@@ -31,27 +31,23 @@ const Header: FC = () => {
   useEffect(() => {
     const mediaQuery = window.matchMedia("(max-width: 768px)");
     setIsMobileScreen(mediaQuery.matches);
-
     const handleResize = () => {
       setIsMobileScreen(mediaQuery.matches);
       if (!mediaQuery.matches) {
         setMobileMenuOpen(false);
       }
     };
-
     mediaQuery.addEventListener("change", handleResize);
-
     return () => {
       mediaQuery.removeEventListener("change", handleResize);
     };
   }, []);
-
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!mobileMenuOpen);
   };
 
   return (
-    <nav className="bg-background relative z-50 w-full px-4 py-4 shadow-md lg:px-12">
+    <nav className="bg-background relative z-50 w-full px-4 py-4 shadow-md lg:px-12 ">
       <div className="mx-auto flex items-center justify-between">
         <Link href="/dashboard">
           <div className="flex items-center">
@@ -71,13 +67,11 @@ const Header: FC = () => {
             />
           </div>
         </Link>
-
         <div className="md: hidden items-center justify-end space-x-4 md:flex">
           <div className="flex items-center">
             <ButtonUser />
           </div>
         </div>
-
         <div className="flex items-center md:hidden">
           <button
             onClick={toggleMobileMenu}
@@ -91,11 +85,10 @@ const Header: FC = () => {
           </button>
         </div>
       </div>
-
       {isMobileScreen && mobileMenuOpen && (
-        <div className="bg-primary-background absolute left-0 top-full h-screen w-3/4 overflow-y-auto shadow-md">
-          <div className="flex flex-col px-6 py-4">
-            <nav className="flex flex-col gap-2">
+        <div className="bg-primary-background fixed left-0 top-0 z-40 h-screen w-3/4 overflow-y-auto shadow-md">
+          <div className="flex h-full flex-col px-6 py-4">
+            <nav className="flex h-full flex-col gap-2">
               {sidebarLinks?.length > 0
                 ? sidebarLinks.map((item: SidebarLinkType, index: number) =>
                     item.children ? (
@@ -207,7 +200,6 @@ const Header: FC = () => {
           </div>
         </div>
       )}
-
       {isMobileScreen && !mobileMenuOpen && (
         <div className="bg-secondary fixed bottom-0 left-0 flex w-full justify-center py-4 shadow-md">
           <ButtonUser />

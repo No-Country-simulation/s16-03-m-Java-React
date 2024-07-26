@@ -16,8 +16,8 @@ import { logout } from "@/modules/auth/actions/auth";
 
 const ButtonUser: FC = () => {
   return (
-    <div className="flex w-full flex-col">
-      <div className="flex w-full items-center gap-4">
+    <div className="flex w-full flex-col items-center">
+      <div className="flex w-full items-center justify-around gap-4">
         <Button
           variant="ghost"
           size="icon"
