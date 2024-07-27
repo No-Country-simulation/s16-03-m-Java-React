@@ -6,21 +6,21 @@ const textos = () => {
       <Button
         type="submit"
         size="sm"
-        className="text-primary border-primary hover:text-secondary sm:size-lg my-2 rounded-xl border bg-transparent text-lg font-light"
+        className="text-primary  sm:size-lg hover:bg-gray-0 my-2 rounded-xl border border-gray-300 bg-gray-100 bg-transparent text-lg font-light opacity-60"
       >
         Agregar título
       </Button>
       <Button
         type="submit"
         size="sm"
-        className="text-primary border-primary hover:text-secondary sm:size-lg my-2 rounded-xl border bg-transparent text-sm font-light"
+        className="text-primary  sm:size-lg hover:bg-gray-0 my-2 rounded-xl border border-gray-300 bg-gray-100 bg-transparent text-lg font-light opacity-60"
       >
         Agregar subtítulo
       </Button>
       <Button
         type="submit"
         size="sm"
-        className="text-primary border-primary hover:text-secondary sm:size-lg my-2 rounded-xl border bg-transparent text-xs font-light"
+        className="text-primary  sm:size-lg hover:bg-gray-0 my-2 rounded-xl border border-gray-300 bg-gray-100 bg-transparent text-lg font-light opacity-60"
       >
         Agregar texto
       </Button>
