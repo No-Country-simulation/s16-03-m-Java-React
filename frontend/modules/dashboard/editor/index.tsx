@@ -9,6 +9,7 @@ import Textos from "@/modules/dashboard/editor/components/button-texts";
 import EditBar from "@/modules/dashboard/editor/components/edit-bar";
 import Elements from "@/modules/dashboard/editor/components/elements";
 import Images from "@/modules/dashboard/editor/components/images";
+import Products from "@/modules/dashboard/editor/components/products";
 import Templates from "@/modules/dashboard/editor/components/templates";
 import Videos from "@/modules/dashboard/editor/components/videos";
 import banner from "@/public/images/banner.png";
@@ -35,6 +36,10 @@ const EditorPage = () => {
           <div className="m-6 flex flex-col">
             <h1 className="text-primary my-4">Templates</h1>
             <Templates />
+          </div>
+          <div className="m-6 flex flex-col">
+            <h1 className="text-primary my-4">Productos</h1>
+            <Products />
           </div>
           <div className="m-6 flex flex-col">
             <h1 className="text-primary my-2">Texto</h1>

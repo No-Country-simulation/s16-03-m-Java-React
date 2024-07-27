@@ -394,7 +394,7 @@ const ProductForm = () => {
               <Button
                 type="submit"
                 size="sm"
-                className="sm:size-lg mt-2 rounded-xl"
+                className="sm:size-lg  rounded-xl"
               >
                 Publicar
               </Button>

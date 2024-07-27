@@ -10,8 +10,8 @@ const sidebarLinks: SidebarLinkType[] = [
     url: "/dashboard",
   },
   {
-    title: "Estadísticas",
-    url: "/dashboard/statistics",
+    title: "Templates",
+    url: "/dashboard/templates",
   },
   {
     title: "Productos",
@@ -29,6 +29,14 @@ const sidebarLinks: SidebarLinkType[] = [
         url: "/dashboard/products/published",
       },
     ],
+  },
+  {
+    title: "Grupos",
+    url: "/dashboard/groups",
+  },
+  {
+    title: "Estadísticas",
+    url: "/dashboard/statistics",
   },
   {
     title: "Tutoriales",
