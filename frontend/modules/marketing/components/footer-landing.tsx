@@ -11,7 +11,7 @@ import Logofoot from "@/public/images/Logofoot.png";
 
 const Footer: FC = () => {
   return (
-    <footer className="bg-primary text-destructive-foreground relative w-full  overflow-hidden md:h-48">
+    <footer className="bg-primary text-destructive-foreground relative top-32 w-full overflow-hidden md:top-0 md:h-48">
       <div className="absolute bottom-0 left-0 -skew-y-6 transform">
         <Image src={Logofoot} alt="Logo footer" width={260} height={260} />
       </div>
