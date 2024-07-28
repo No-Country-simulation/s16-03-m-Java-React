@@ -28,6 +28,7 @@ const ProductForm = () => {
   const [imagePreviewUrls, setImagePreviewUrls] = useState<string[]>([]);
   const [dragOver, setDragOver] = useState(false);
   const [showSuccessDialog, setShowSuccessDialog] = useState(false);
+  const [, /*isLoading*/ setIsLoading] = useState(false);
 
   const form = useForm<z.infer<typeof ProductSchema>>({
     resolver: zodResolver(ProductSchema),
@@ -58,7 +59,7 @@ const ProductForm = () => {
         form.setValue("image", file.name);
         form.clearErrors("image");
       } else {
-        alert("No puedes subir más de 6 imágenes.");
+        alert("No puedes subir más de 6 imágenes."); //TODO: Cambiar por un modal
       }
     }
   };
@@ -77,7 +78,7 @@ const ProductForm = () => {
         form.clearErrors("image");
         setDragOver(false);
       } else {
-        alert("No puedes subir más de 6 imágenes.");
+        alert("No puedes subir más de 6 imágenes."); //TODO: Cambiar por un modal
       }
     }
   };
@@ -96,15 +97,42 @@ const ProductForm = () => {
     setImages((prevImages) => prevImages.filter((_, i) => i !== id));
     setImagePreviewUrls((prevUrls) => prevUrls.filter((_, i) => i !== id));
   };
+  const convertToFormData = (data: z.infer<typeof ProductSchema>) => {
+    const formData = new FormData();
+    for (const key in data) {
+      formData.append(key, data[key as keyof typeof data] as string);
+    }
+    images.forEach((image) => {
+      formData.append("images", image);
+    });
+    return formData;
+  };
 
-  const onSubmit = (data: z.infer<typeof ProductSchema>) => {
-    setShowSuccessDialog(true);
-    setTimeout(() => {
-      setShowSuccessDialog(false);
-    }, 3000);
-    form.reset();
-    setImages([]);
-    setImagePreviewUrls([]);
+  const onSubmit = async (data: z.infer<typeof ProductSchema>) => {
+    setIsLoading(true);
+    try {
+      const formData = convertToFormData(data);
+      const res = await fetch("api/products", {
+        method: "POST",
+        body: formData,
+      });
+      if (!res.ok) {
+        throw new Error("Error al enviar el producto");
+      }
+      const result = await res.json();
+      console.log("Producto enviado: ", result);
+      setShowSuccessDialog(true);
+      setTimeout(() => {
+        setShowSuccessDialog(false);
+      }, 3000);
+      form.reset();
+      setImages([]);
+      setImagePreviewUrls([]);
+    } catch (error) {
+      console.error("Error al enviar el producto", error);
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (

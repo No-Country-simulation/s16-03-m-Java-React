@@ -21,7 +21,10 @@ const RootLayout = ({ children }: Props) => {
     <html lang="en">
       <body className={poppins.className}>
         <Header />
-        <Layout variant={showSidebar ? "width_sidebar" : "simple"}>
+        <Layout
+          className="relative top-20 md:top-16"
+          variant={showSidebar ? "width_sidebar" : "simple"}
+        >
           <Sidebar />
           <Layout asChild variant={!showSidebar ? "simple" : "default"}>
             <main>{children}</main>

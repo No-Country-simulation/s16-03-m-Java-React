@@ -24,7 +24,7 @@ const EditorPage = () => {
 
   return (
     <>
-      <div className="grid min-h-screen grid-cols-12 gap-4">
+      <div className="grid min-h-screen grid-cols-12 gap-4 md:py-10">
         <div className="col-span-12 bg-white md:col-span-4">
           <div
             className="ml-6 mt-2 flex cursor-pointer flex-row"

@@ -47,7 +47,7 @@ const Header: FC = () => {
   };
 
   return (
-    <nav className="bg-background relative z-50 w-full px-4 py-4 shadow-md lg:px-12 ">
+    <nav className="bg-background fixed z-50 w-full px-4 py-4 shadow-md lg:px-12 ">
       <div className="mx-auto flex items-center justify-between">
         <Link href="/dashboard">
           <div className="flex items-center">

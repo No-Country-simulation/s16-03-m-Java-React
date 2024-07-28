@@ -7,4 +7,7 @@ export const GroupSchema = z.object({
   description: z.string().min(5, {
     message: "La descripción es requerida",
   }),
+  products: z.array(z.string()).nonempty({
+    message: "Debes seleccionar al menos un producto",
+  }),
 });
