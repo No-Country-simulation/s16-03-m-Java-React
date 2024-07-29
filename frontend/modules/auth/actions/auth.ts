@@ -33,7 +33,6 @@ export const registerAction = async (
     userName: formData.get("userName"),
   });
 
-  console.log("validatedFields=>", validatedFields.error);
   const errorMessage = { message: "Invalid login credentials." };
 
   if (!validatedFields.success) {

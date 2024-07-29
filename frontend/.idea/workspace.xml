@@ -6,9 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="6ba83ad2-4b07-4d5d-8201-634386298acb" name="Changes" comment="feat(frontend): added layout">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(private)/dashboard/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(private)/dashboard/layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(private)/dashboard/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(private)/dashboard/page.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/modules/auth/actions/auth.ts" beforeDir="false" afterPath="$PROJECT_DIR$/modules/auth/actions/auth.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/auth/components/register-form.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/modules/auth/components/register-form.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/auth/schemas/register-schema.ts" beforeDir="false" afterPath="$PROJECT_DIR$/modules/auth/schemas/register-schema.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -147,6 +147,7 @@
       <workItem from="1721830098919" duration="11838000" />
       <workItem from="1721910401720" duration="7620000" />
       <workItem from="1721997357865" duration="3286000" />
+      <workItem from="1722260544387" duration="4951000" />
     </task>
     <task id="LOCAL-00001" summary="feat(frontend): added layout">
       <option name="closed" value="true" />
