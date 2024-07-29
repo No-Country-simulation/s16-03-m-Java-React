@@ -1,4 +1,4 @@
-package com.cosmos_api.Cosmos.API.domain.entities;
+package com.cosmos_api.Cosmos.API.domain.entities.products;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.CascadeType;

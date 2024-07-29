@@ -1,4 +1,4 @@
-package com.cosmos_api.Cosmos.API.aplication.dto.usuario;
+package com.cosmos_api.Cosmos.API.aplication.dto.user;
 
 import jakarta.validation.constraints.NotBlank;
 

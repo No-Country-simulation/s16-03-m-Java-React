@@ -1,11 +1,11 @@
-package com.cosmos_api.Cosmos.API.domain.entities;
+package com.cosmos_api.Cosmos.API.domain.entities.user;
 
+import com.cosmos_api.Cosmos.API.domain.entities.products.Products;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
@@ -30,6 +30,7 @@ public class DetallesUsuario {
     // relación OneToOne con Usuario
     @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "usuario_id")
+    @JsonManagedReference
     private Usuario usuario;
 
     @OneToMany(mappedBy = "detallesUsuario", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
