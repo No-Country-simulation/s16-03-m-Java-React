@@ -10,10 +10,6 @@ const sidebarLinks: SidebarLinkType[] = [
     url: "/dashboard",
   },
   {
-    title: "Templates",
-    url: "/dashboard/templates",
-  },
-  {
     title: "Productos",
     children: [
       // {
@@ -33,6 +29,10 @@ const sidebarLinks: SidebarLinkType[] = [
   {
     title: "Grupos",
     url: "/dashboard/groups",
+  },
+  {
+    title: "Mis webs",
+    url: "/dashboard/webs",
   },
   {
     title: "Estadísticas",
