@@ -12,19 +12,26 @@ import {
   FormControl,
   FormField,
   FormItem,
+  FormLabel,
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import ButtonsAdd from "@/modules/groups/components/add/components/buttons-add";
-import MultiSelectZod from "@/modules/groups/components/add/components/select";
-// import { MultiSelect } from "@/modules/groups/components/add/components/select/multi-select";
+import {
+  MultiSelector,
+  MultiSelectorContent,
+  MultiSelectorInput,
+  MultiSelectorItem,
+  MultiSelectorList,
+  MultiSelectorTrigger,
+} from "@/modules/groups/components/add/components/select/multi-select";
 import SuccessDialog from "@/modules/groups/components/add/components/success-dialog";
 import { GroupSchema } from "@/modules/groups/components/add/schema/data-group";
 import Logonav from "@/public/images/Logonav.png";
 
 const GroupForm = () => {
-  const [products, setProducts] = useState([]);
+  const [, /*products*/ setProducts] = useState([]);
   const [, /*formData*/ setFormData] = useState<z.infer<
     typeof GroupSchema
   > | null>(null);
@@ -71,17 +78,40 @@ const GroupForm = () => {
       form.reset();
     }
   };
+  //fetch que obtiene los productos de la api
   useEffect(() => {
-    // Reemplaza esta URL con la URL de tu backend
     fetch("https://api.example.com/products")
       .then((response) => response.json())
       .then((data) => setProducts(data))
       .catch((error) => console.error("Error fetching products:", error));
   }, []);
+
+  const users = [
+    {
+      name: "Televisor",
+    },
+    {
+      name: "Radio",
+    },
+    {
+      name: "Lavadora",
+    },
+    {
+      name: "Celular",
+    },
+    {
+      name: "playstation",
+    },
+    {
+      name: "refrigerador",
+    },
+    {
+      name: "plancha",
+    },
+  ];
   return (
     <>
-    <MultiSelectZod products={products}/>
-      {/* <Form {...form}>
+      <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
           <div className="flex flex-col gap-6 lg:flex-row">
             <div className="flex-1 space-y-6">
@@ -124,10 +154,29 @@ const GroupForm = () => {
             control={form.control}
             name="products"
             render={({ field }) => (
-              <FormItem>
-                <FormControl>
-                  <MultiSelectZod products={products} {...field} />
-                </FormControl>
+              <FormItem className="w-full">
+                <FormLabel className="text-primary-background">
+                  Selecciona uno o más productos
+                </FormLabel>
+                <MultiSelector
+                  onValuesChange={field.onChange}
+                  values={field.value}
+                >
+                  <MultiSelectorTrigger className="border-primary">
+                    <MultiSelectorInput />
+                  </MultiSelectorTrigger>
+                  <MultiSelectorContent>
+                    <MultiSelectorList>
+                      {users.map((user) => (
+                        <MultiSelectorItem key={user.name} value={user.name}>
+                          <div className="flex items-center space-x-2">
+                            <span>{user.name}</span>
+                          </div>
+                        </MultiSelectorItem>
+                      ))}
+                    </MultiSelectorList>
+                  </MultiSelectorContent>
+                </MultiSelector>
                 <FormMessage />
               </FormItem>
             )}
@@ -149,7 +198,7 @@ const GroupForm = () => {
           <Image src={Logonav} alt="Logo cosmos" />
           <p className="text-primary ml-4 text-sm">Enviando...</p>
         </div>
-      )} */}
+      )}
     </>
   );
 };

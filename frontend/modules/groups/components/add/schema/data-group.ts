@@ -7,7 +7,12 @@ export const GroupSchema = z.object({
   description: z.string().min(5, {
     message: "La descripción es requerida",
   }),
-  products: z.array(z.string()).nonempty({
-    message: "Debes seleccionar al menos un producto",
-  }),
+  products: z
+    .array(z.string())
+    .min(1, {
+      message: "Debes agregar al menos un producto",
+    })
+    .max(6, {
+      message: "No puedes agregar más de seis productos",
+    }),
 });
