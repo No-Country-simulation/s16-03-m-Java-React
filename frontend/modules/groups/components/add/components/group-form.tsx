@@ -17,7 +17,8 @@ import {
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import ButtonsAdd from "@/modules/groups/components/add/components/buttons-add";
-import { MultiSelect } from "@/modules/groups/components/add/components/select/multi-select";
+import MultiSelectZod from "@/modules/groups/components/add/components/select";
+// import { MultiSelect } from "@/modules/groups/components/add/components/select/multi-select";
 import SuccessDialog from "@/modules/groups/components/add/components/success-dialog";
 import { GroupSchema } from "@/modules/groups/components/add/schema/data-group";
 import Logonav from "@/public/images/Logonav.png";
@@ -79,7 +80,8 @@ const GroupForm = () => {
   }, []);
   return (
     <>
-      <Form {...form}>
+    <MultiSelectZod products={products}/>
+      {/* <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
           <div className="flex flex-col gap-6 lg:flex-row">
             <div className="flex-1 space-y-6">
@@ -124,7 +126,7 @@ const GroupForm = () => {
             render={({ field }) => (
               <FormItem>
                 <FormControl>
-                  <MultiSelect products={products} {...field} />
+                  <MultiSelectZod products={products} {...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -147,7 +149,7 @@ const GroupForm = () => {
           <Image src={Logonav} alt="Logo cosmos" />
           <p className="text-primary ml-4 text-sm">Enviando...</p>
         </div>
-      )}
+      )} */}
     </>
   );
 };
