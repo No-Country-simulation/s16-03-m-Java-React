@@ -1,5 +1,6 @@
-package com.cosmos_api.Cosmos.API.domain.entities;
+package com.cosmos_api.Cosmos.API.domain.entities.user;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 import org.springframework.security.core.GrantedAuthority;
@@ -24,7 +25,8 @@ public class Usuario implements UserDetails {
     private String email;
     private String password;
 
-    @OneToOne(mappedBy = "usuario" ,cascade = CascadeType.ALL)
+    @OneToOne(mappedBy = "usuario" ,fetch = FetchType.LAZY)
+    @JsonIgnore
     private DetallesUsuario detallesUsuario;
 
     @Override
