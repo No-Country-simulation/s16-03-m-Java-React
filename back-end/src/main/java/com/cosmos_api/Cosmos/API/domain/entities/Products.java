@@ -55,4 +55,7 @@ public class Products {
     @JsonBackReference
     private DetallesUsuario detallesUsuario;
 
+    @ManyToOne(targetEntity = Groups.class, cascade = CascadeType.PERSIST)
+    @JsonBackReference
+    private Groups groups;
 }
