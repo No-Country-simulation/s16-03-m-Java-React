@@ -13,6 +13,6 @@ export const GroupSchema = z.object({
       message: "Debes agregar al menos un producto",
     })
     .max(6, {
-      message: "No puedes agregar más de seis productos",
+      message: "No puedes agregar más de 6 productos",
     }),
 });
