@@ -1,5 +1,7 @@
 "use server";
 
+import { redirect } from "next/navigation";
+
 import { createSession, deleteSession } from "./stateless-session";
 import { LoginSchema, RegisterSchema } from "@/modules/auth/schemas";
 
@@ -33,8 +35,6 @@ export const registerAction = async (
     userName: formData.get("userName"),
   });
 
-  const errorMessage = { message: "Invalid login credentials." };
-
   if (!validatedFields.success) {
     return {
       errors: validatedFields.error.flatten().fieldErrors,
@@ -49,12 +49,15 @@ export const registerAction = async (
     });
     const user = await res.json();
 
-    if (!res.ok || !user) {
-      console.error("ERROR FINDING USER: ", res.statusText);
-      return errorMessage;
+    //TODO: Capturar respuesta en caso el correo ó nombre de usuario sean iguales
+
+    if (!user) {
+      return {
+        message: "An error occurred while creating your account.",
+      };
     }
 
-    await createSession(user.jwtToken);
+    await createSession(user);
   } catch (error) {
     console.error("Error in authorize:", error);
     throw error;
@@ -70,7 +73,6 @@ export const loginAction = async (
     password: formData.get("password"),
   });
 
-  console.log("validatedFields=>", validatedFields);
   const errorMessage = { message: "Invalid login credentials." };
 
   if (!validatedFields.success) {
@@ -92,7 +94,7 @@ export const loginAction = async (
       return errorMessage;
     }
 
-    await createSession(user.jwtToken);
+    await createSession(user);
   } catch (error) {
     console.error("Error in authorize:", error);
     throw error;

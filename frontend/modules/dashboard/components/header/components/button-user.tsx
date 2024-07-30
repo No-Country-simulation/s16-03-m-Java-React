@@ -13,8 +13,13 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { Icon } from "@/components/ui/icon";
 import { logout } from "@/modules/auth/actions/auth";
+import { useUserStore } from "@/store/use.store";
 
 const ButtonUser: FC = () => {
+  const { user } = useUserStore((state) => state);
+
+  console.log("user=<", user);
+
   return (
     <div className="flex w-full flex-col">
       <div className="flex w-full items-center gap-4">
@@ -44,9 +49,9 @@ const ButtonUser: FC = () => {
           </DropdownMenuTrigger>
           <DropdownMenuContent className="w-56" align="end">
             <DropdownMenuGroup className="flex flex-col gap-1 p-2">
-              <p className="font-medium">User name</p>
+              <p className="font-medium">{user?.name}</p>
               <p className="text-muted-foreground w-[200px] truncate text-sm">
-                email@email.com
+                {user?.mail}
               </p>
             </DropdownMenuGroup>
             <DropdownMenuSeparator />

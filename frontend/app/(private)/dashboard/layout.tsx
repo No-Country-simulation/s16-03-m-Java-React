@@ -1,32 +1,22 @@
-"use client";
 import { ReactNode } from "react";
 
-import { usePathname } from "next/navigation";
-
-import { Layout } from "@/components/layouts";
-import Header from "@/modules/dashboard/components/header/index";
-import Sidebar from "@/modules/dashboard/components/sidebar";
-import Footer from "@/modules/marketing/components/footer-landing";
+import AuthProvider from "@/app/(private)/dashboard/provider";
+import { DashboardLayout } from "@/components/layouts";
+import { getUser } from "@/modules/auth/actions";
 import { poppins } from "@/styles/font";
 
 type Props = {
   children: ReactNode;
 };
 
-const RootLayout = ({ children }: Props) => {
-  const pathName = usePathname();
-  const showSidebar = pathName !== "/dashboard/templates/editor";
+const RootLayout = async ({ children }: Props) => {
+  const user = await getUser();
+
   return (
     <html lang="en">
       <body className={poppins.className}>
-        <Header />
-        <Layout variant={showSidebar ? "width_sidebar" : "simple"}>
-          <Sidebar />
-          <Layout asChild>
-            <main>{children}</main>
-          </Layout>
-        </Layout>
-        <Footer />
+        <AuthProvider user={user} />
+        <DashboardLayout>{children}</DashboardLayout>
       </body>
     </html>
   );

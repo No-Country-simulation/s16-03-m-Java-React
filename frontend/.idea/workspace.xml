@@ -8,7 +8,16 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/(private)/dashboard/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(private)/dashboard/layout.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/(private)/dashboard/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(private)/dashboard/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/layouts/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/components/layouts/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/layouts/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/layouts/layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/middleware.ts" beforeDir="false" afterPath="$PROJECT_DIR$/middleware.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/modules/auth/actions/auth.ts" beforeDir="false" afterPath="$PROJECT_DIR$/modules/auth/actions/auth.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/auth/actions/dal.ts" beforeDir="false" afterPath="$PROJECT_DIR$/modules/auth/actions/dal.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/auth/actions/stateless-session.ts" beforeDir="false" afterPath="$PROJECT_DIR$/modules/auth/actions/stateless-session.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/dashboard/components/header/components/button-user.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/modules/dashboard/components/header/components/button-user.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/lib/auth-options.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,7 +38,7 @@
                 <list>
                   <RecentBranch>
                     <option name="branchName" value="joel-auth-register" />
-                    <option name="lastUsedInstant" value="1721910442" />
+                    <option name="lastUsedInstant" value="1722288689" />
                   </RecentBranch>
                   <RecentBranch>
                     <option name="branchName" value="joel-auth" />
@@ -80,11 +89,11 @@
       <recent name="D:\github\personal\s16-03-m-Java-React\frontend\public\images" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\github\personal\s16-03-m-Java-React\frontend\modules\dashboard\_components" />
       <recent name="D:\github\personal\s16-03-m-Java-React\frontend\modules\auth\action" />
       <recent name="D:\github\personal\s16-03-m-Java-React\frontend\app" />
       <recent name="D:\github\personal\s16-03-m-Java-React\frontend\app\(private)\dashboard" />
       <recent name="D:\github\personal\s16-03-m-Java-React\frontend\public\images" />
-      <recent name="D:\github\personal\s16-03-m-Java-React\frontend\modules\dashboard\components\sidebar" />
     </key>
   </component>
   <component name="RunManager" selected="npm.dev">
@@ -148,6 +157,7 @@
       <workItem from="1721910401720" duration="7620000" />
       <workItem from="1721997357865" duration="3286000" />
       <workItem from="1722260544387" duration="4951000" />
+      <workItem from="1722288821820" duration="14702000" />
     </task>
     <task id="LOCAL-00001" summary="feat(frontend): added layout">
       <option name="closed" value="true" />
@@ -174,5 +184,17 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="feat(frontend): added layout" />
     <option name="LAST_COMMIT_MESSAGE" value="feat(frontend): added layout" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/modules/auth/actions/auth.ts</url>
+          <line>27</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

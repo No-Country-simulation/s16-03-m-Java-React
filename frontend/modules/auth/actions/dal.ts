@@ -11,14 +11,10 @@ export const getUser = cache(async () => {
   const session = await verifySession();
   if (!session) return null;
 
-  const body = {
-    id: "8",
-  };
-
   try {
     const res = await fetch(`${apiUrl}/user/find`, {
       method: "POST",
-      body: JSON.stringify(body),
+      body: JSON.stringify({ id: session?.id }),
       headers: { "Content-Type": "application/json" },
     });
     return await res.json();
