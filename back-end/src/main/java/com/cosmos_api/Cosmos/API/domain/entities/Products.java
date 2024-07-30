@@ -39,7 +39,7 @@ public class Products {
 
     private String color;
 
-    private String discount;
+    private int discount;
 
     private String tag;
 
