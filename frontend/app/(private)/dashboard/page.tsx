@@ -1,6 +1,8 @@
+import { getUser } from "@/modules/auth/actions";
 import Init from "@/modules/dashboard/init";
 
-const Dashboard = () => {
+const Dashboard = async () => {
+  const user = await getUser();
   return (
     <div>
       <Init />

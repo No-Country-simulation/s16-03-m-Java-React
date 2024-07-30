@@ -1,3 +1,5 @@
+"use client";
+
 import * as React from "react";
 
 import { Slot } from "@radix-ui/react-slot";
@@ -32,6 +34,8 @@ const Layout = ({
   asChild,
   className,
   variant = "default",
+  // eslint-disable-next-line no-unused-vars
+  isSimple = false,
   ...props
 }: LayoutProps) => {
   const Comp = asChild ? Slot : "div";

@@ -4,9 +4,11 @@ import { SignJWT, jwtVerify } from "jose";
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 
+import { UserType } from "@/types";
+
 export type SessionPayload = {
-  userId: string | number;
-  expiresAt: Date;
+  value?: string | number;
+  expiresAt?: Date;
 };
 
 // eslint-disable-next-line no-undef
@@ -32,13 +34,22 @@ export async function decrypt(session: string | undefined = "") {
   }
 }
 
-export async function createSession(userId: string) {
+export const createSession = async (user: UserType) => {
+  const { id, jwtToken } = user;
+
   const expiresAt = new Date(Date.now() + 60 * 60 * 1000);
-  const session = await encrypt({ userId, expiresAt });
+  const sessionToken = await encrypt({ value: jwtToken, expiresAt });
+  const sessionId = await encrypt({ value: id, expiresAt });
 
-  console.log("expiresAt=>", expiresAt);
+  cookies().set("sessionToken", sessionToken, {
+    httpOnly: true,
+    secure: true,
+    expires: expiresAt,
+    sameSite: "lax",
+    path: "/",
+  });
 
-  cookies().set("session", session, {
+  cookies().set("sessionId", sessionId, {
     httpOnly: true,
     secure: true,
     expires: expiresAt,
@@ -47,17 +58,23 @@ export async function createSession(userId: string) {
   });
 
   redirect("/dashboard");
-}
+};
 
 export async function verifySession() {
-  const cookie = cookies().get("session")?.value;
-  const session = await decrypt(cookie);
+  const cookie = cookies().get("sessionToken")?.value;
+  const id = cookies().get("sessionId")?.value;
+  const sessionToken = await decrypt(cookie);
+  const sessionId = await decrypt(id);
 
-  if (!session?.userId) {
+  if (!sessionToken?.value && !sessionId?.value) {
     redirect("/login");
   }
 
-  return { isAuth: true, userId: Number(session.userId) };
+  return {
+    isAuth: true,
+    id: Number(sessionId?.value),
+    token: sessionToken?.value,
+  };
 }
 
 export async function updateSession() {
@@ -79,6 +96,7 @@ export async function updateSession() {
 }
 
 export function deleteSession() {
-  cookies().delete("session");
+  cookies().delete("sessionId");
+  cookies().delete("sessionToken");
   redirect("/login");
 }
