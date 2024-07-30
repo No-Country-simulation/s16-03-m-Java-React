@@ -1,5 +1,6 @@
 package com.cosmos_api.Cosmos.API.domain.entities;
 
+import com.cosmos_api.Cosmos.API.domain.entities.products.Products;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;

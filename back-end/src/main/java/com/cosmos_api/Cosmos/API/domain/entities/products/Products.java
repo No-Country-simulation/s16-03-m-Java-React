@@ -1,5 +1,6 @@
 package com.cosmos_api.Cosmos.API.domain.entities.products;
 
+import com.cosmos_api.Cosmos.API.domain.entities.Groups;
 import com.cosmos_api.Cosmos.API.domain.entities.user.DetallesUsuario;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonManagedReference;

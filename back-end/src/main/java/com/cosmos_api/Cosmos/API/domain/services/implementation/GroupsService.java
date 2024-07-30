@@ -2,7 +2,7 @@ package com.cosmos_api.Cosmos.API.domain.services.implementation;
 
 import com.cosmos_api.Cosmos.API.aplication.dto.dtoGroups;
 import com.cosmos_api.Cosmos.API.domain.entities.Groups;
-import com.cosmos_api.Cosmos.API.domain.entities.Products;
+import com.cosmos_api.Cosmos.API.domain.entities.products.Products;
 import com.cosmos_api.Cosmos.API.domain.repository.RepositoryGroups;
 import com.cosmos_api.Cosmos.API.domain.repository.RepositoryProducts;
 import com.cosmos_api.Cosmos.API.domain.services.interfaces.IGroupsService;
