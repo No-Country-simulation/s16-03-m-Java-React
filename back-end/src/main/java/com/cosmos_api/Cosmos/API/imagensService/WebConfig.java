@@ -9,6 +9,6 @@ public class WebConfig implements WebMvcConfigurer{
       @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
         registry.addResourceHandler("/upload/**")
-                .addResourceLocations("file:/home/roman/no_contry/s16_03_m_Java_React/s16-03-m-Java-React/back-end/src/main/java/com/cosmos_api/Cosmos/API/FileStorageService/upload/");
+                .addResourceLocations("file:/home/roman/programasPersonales/uploadPrograma/upload/");
     }
 }
