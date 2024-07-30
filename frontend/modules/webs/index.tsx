@@ -10,7 +10,7 @@ import { WebsType } from "@/modules/webs/constant/webs-data";
 import Logonav from "@/public/images/Logonav.png";
 
 const Webs: React.FC = () => {
-  const [webs, setWebs] = useState<WebsType[]>([]);
+  const [webs /*setWebs*/] = useState<WebsType[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
@@ -21,8 +21,6 @@ const Webs: React.FC = () => {
         if (!response.ok) {
           throw new Error("Error al obtener los datos");
         }
-        const data: WebsType[] = await response.json();
-        setWebs(data);
       } catch (err: any) {
         setError(err.message);
       } finally {
@@ -50,6 +48,16 @@ const Webs: React.FC = () => {
     );
   }
 
+  if (webs.length === 0) {
+    return (
+      <div className="text-primary">
+        <p className="text-primary text-center">
+          No se encontraron webs creadas
+        </p>
+      </div>
+    );
+  }
+
   return (
     <div className="space-y-12 px-4 pb-32 pt-10 md:px-0">
       <HeadingWebs />
@@ -61,20 +69,5 @@ const Webs: React.FC = () => {
     </div>
   );
 };
-//Codigo para mostrar sin info de la base de datos
-// const Webs = () => {
-//   return (
-//     <div className="space-y-12 px-4 pb-32 pt-10 md:px-0">
-//       <HeadingWebs />
-//       <div className="grid grid-cols-1 gap-x-16 gap-y-20 lg:grid-cols-2">
-//         {webs &&
-//           webs.length > 0 &&
-//           webs.map((web: WebsType, index: number) => (
-//             <WebsCard data={web} key={template-item-${index}} />
-//           ))}
-//       </div>
-//     </div>
-//   );
-// };
 
 export default Webs;
