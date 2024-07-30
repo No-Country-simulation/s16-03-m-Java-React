@@ -4,7 +4,6 @@ import AuthProvider from "@/app/(private)/dashboard/provider";
 import { DashboardLayout } from "@/components/layouts";
 import { getUser } from "@/modules/auth/actions";
 import { poppins } from "@/styles/font";
-import { usePathname } from "next/navigation";
 
 type Props = {
   children: ReactNode;
@@ -14,12 +13,10 @@ const RootLayout = async ({ children }: Props) => {
   const user = await getUser();
 
   return (
-    <html lang="en">
-      <body className={poppins.className}>
-        <AuthProvider user={user} />
-        <DashboardLayout>{children}</DashboardLayout>
-      </body>
-    </html>
+    <>
+      <AuthProvider user={user} />
+      <DashboardLayout>{children}</DashboardLayout>
+    </>
   );
 };
 

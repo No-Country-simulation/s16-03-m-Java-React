@@ -5,19 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6ba83ad2-4b07-4d5d-8201-634386298acb" name="Changes" comment="feat(frontend): added layout">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/(private)/dashboard/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(private)/dashboard/layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(private)/dashboard/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(private)/dashboard/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/layouts/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/components/layouts/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/layouts/dahboard-layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/layouts/dahboard-layout.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/layouts/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/layouts/layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/middleware.ts" beforeDir="false" afterPath="$PROJECT_DIR$/middleware.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/auth/actions/auth.ts" beforeDir="false" afterPath="$PROJECT_DIR$/modules/auth/actions/auth.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/auth/actions/dal.ts" beforeDir="false" afterPath="$PROJECT_DIR$/modules/auth/actions/dal.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/auth/actions/stateless-session.ts" beforeDir="false" afterPath="$PROJECT_DIR$/modules/auth/actions/stateless-session.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/dashboard/components/header/components/button-user.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/modules/dashboard/components/header/components/button-user.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/lib/auth-options.ts" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -191,7 +184,6 @@
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/modules/auth/actions/auth.ts</url>
           <line>27</line>
-          <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>

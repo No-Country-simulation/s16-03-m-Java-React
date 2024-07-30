@@ -1,7 +1,5 @@
 "use server";
 
-import { redirect } from "next/navigation";
-
 import { createSession, deleteSession } from "./stateless-session";
 import { LoginSchema, RegisterSchema } from "@/modules/auth/schemas";
 

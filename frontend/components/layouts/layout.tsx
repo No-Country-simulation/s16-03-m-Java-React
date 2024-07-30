@@ -34,6 +34,7 @@ const Layout = ({
   asChild,
   className,
   variant = "default",
+  // eslint-disable-next-line no-unused-vars
   isSimple = false,
   ...props
 }: LayoutProps) => {
