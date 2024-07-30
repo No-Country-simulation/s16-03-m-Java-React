@@ -1,7 +1,7 @@
 "use client";
 
-import Link from "next/link";
 import Image from "next/image";
+import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 import sidebarLinks, { SidebarLinkType } from "./data";
@@ -23,7 +23,7 @@ const Sidebar = () => {
   if (!shouldShowSidebar) return null;
 
   return (
-    <aside className="bg-primary-background sticky top-0 h-screen px-6 py-10 hidden md:block">
+    <aside className="bg-primary-background sticky top-0 hidden h-screen px-6 py-10 md:block">
       <div className="grid gap-4">
         {sidebarLinks?.length > 0 ? (
           <nav className="flex flex-col gap-2">
@@ -43,7 +43,7 @@ const Sidebar = () => {
                       )}
                     >
                       <div className="flex items-center justify-start">
-                        <div className="flex-shrink-0 w-6 h-6 mr-2">
+                        <div className="mr-2 h-6 w-6 flex-shrink-0">
                           {pathName === item.url && (
                             <Image
                               src={Logowhite}
@@ -75,7 +75,7 @@ const Sidebar = () => {
                             )}
                           >
                             <div className="flex items-center justify-start">
-                              <div className="flex-shrink-0 w-6 h-6 mr-2">
+                              <div className="mr-2 h-6 w-6 flex-shrink-0">
                                 {pathName === child.url && (
                                   <Image
                                     src={Logowhite}
@@ -109,7 +109,7 @@ const Sidebar = () => {
                     )}
                   >
                     <div className="flex items-center justify-start">
-                      <div className="flex-shrink-0 w-6 h-6 mr-2">
+                      <div className="mr-2 h-6 w-6 flex-shrink-0">
                         {pathName === item.url && (
                           <Image
                             src={Logowhite}

@@ -1,5 +1,8 @@
-package com.cosmos_api.Cosmos.API.domain.entities;
+package com.cosmos_api.Cosmos.API.domain.entities.user;
 
+import com.cosmos_api.Cosmos.API.domain.entities.template.Template;
+import com.cosmos_api.Cosmos.API.domain.entities.web.Web;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 import org.springframework.security.core.GrantedAuthority;
@@ -18,16 +21,29 @@ import java.util.List;
 public class Usuario implements UserDetails {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY) // provar con UUID
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @Column(unique = true)
     private String email;
     private String password;
 
+    @OneToOne(mappedBy = "usuario" ,fetch = FetchType.LAZY)
+    @JsonIgnore
+    private DetallesUsuario detallesUsuario;
+
+    @OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL)
+    @JsonIgnore
+    private List<Template> templates; // Maneja múltiples templates
+
+    @OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL)
+    @JsonIgnore
+    private List<Web> webs; // Maneja múltiples Webs
+
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return List.of(new SimpleGrantedAuthority("ROLE_USER"));
     }
+
 
     @Override
     public String getPassword(){

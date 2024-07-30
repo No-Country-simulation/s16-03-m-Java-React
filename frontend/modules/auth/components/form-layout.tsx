@@ -13,13 +13,13 @@ type Props = {
 
 const FormLayout = ({ children }: Props) => {
   return (
-    <section className="bg-primary flex flex-col lg:flex-row">
+    <section className="bg-primary flex min-h-screen flex-col  lg:flex-row">
       <div className="text-secondary w-full flex-col justify-between p-8 lg:w-1/2">
         <div className="mb-8 ml-8 flex items-center space-x-4">
           <Image src={Logo} alt="Logo" width={220} height={57} />
         </div>
         <div className="lg:w-2/2 mx-auto w-full p-8 text-start">
-          <h1 className="font-bold lg:text-5xl text-3xl">
+          <h1 className="text-3xl font-bold lg:text-5xl">
             Crea tu landing page profesional en minutos.
           </h1>
           <div>

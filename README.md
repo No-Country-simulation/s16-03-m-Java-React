@@ -1,10 +1,8 @@
 
 <div style="display: flex;">
-  <img src="./frontend/public/images/Logonav.png" alt="Figma" style="width: 40px; height: 40px;">
-  <h1 style="margin:6px;">COSMOS</h1>
+  <img src="./frontend/public/images/Logo.png" alt="Figma" style="width: 150px; height: 40px;">
   </div>
 
-___
 ## Sitio Web E-Commerce
 Cosmos es una plataforma de e-commerce de tipo marketplace diseñada para evolucionar la manera en que los vendedores presentan sus productos en línea. Con un enfoque centrado en Customer Success Management (CSM), nuestro objetivo es proporcionar a los vendedores herramientas customizables para destacar en el mercado digital.
 - **Objetivo**: Entregarles a los usuarios la oportunidad de crear publicaciones atractivas y personalizadas a través de landing pages adaptables. Estas páginas no solo permiten a los vendedores exhibir sus productos de manera llamativa, sino que también optimizan la experiencia del usuario final, incrementando así las posibilidades de venta.

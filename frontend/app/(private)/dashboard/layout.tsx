@@ -4,6 +4,7 @@ import AuthProvider from "@/app/(private)/dashboard/provider";
 import { DashboardLayout } from "@/components/layouts";
 import { getUser } from "@/modules/auth/actions";
 import { poppins } from "@/styles/font";
+import { usePathname } from "next/navigation";
 
 type Props = {
   children: ReactNode;
