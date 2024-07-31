@@ -9,6 +9,7 @@ import Link from "next/link";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 
+import { productsService } from "../../services";
 import { Button } from "@/components/ui/button";
 import {
   Form,
@@ -36,14 +37,14 @@ const ProductForm = () => {
       name: "",
       brand: "",
       code: "",
-      price: "",
-      stock: "",
-      discount: "",
-      tags: "",
+      price: 0,
+      stock: 0,
+      discount: 0,
+      tag: "",
       color: "",
       category: "",
       description: "",
-      image: "",
+      images: ["string"],
     },
   });
 
@@ -56,10 +57,10 @@ const ProductForm = () => {
           ...prevUrls,
           URL.createObjectURL(file),
         ]);
-        form.setValue("image", file.name);
-        form.clearErrors("image");
+        form.setValue("images", [file.name]);
+        form.clearErrors("images");
       } else {
-        alert("No puedes subir más de 6 imágenes."); //TODO: Cambiar por un modal
+        alert("No puedes subir más de 6 imágenes.");
       }
     }
   };
@@ -74,11 +75,11 @@ const ProductForm = () => {
           ...prevUrls,
           URL.createObjectURL(file),
         ]);
-        form.setValue("image", file.name);
-        form.clearErrors("image");
+        form.setValue("images", [file.name]);
+        form.clearErrors("images");
         setDragOver(false);
       } else {
-        alert("No puedes subir más de 6 imágenes."); //TODO: Cambiar por un modal
+        alert("No puedes subir más de 6 imágenes.");
       }
     }
   };
@@ -97,34 +98,23 @@ const ProductForm = () => {
     setImages((prevImages) => prevImages.filter((_, i) => i !== id));
     setImagePreviewUrls((prevUrls) => prevUrls.filter((_, i) => i !== id));
   };
-  const convertToFormData = (data: z.infer<typeof ProductSchema>) => {
-    const formData = new FormData();
-    for (const key in data) {
-      formData.append(key, data[key as keyof typeof data] as string);
-    }
-    images.forEach((image) => {
-      formData.append("images", image);
-    });
-    return formData;
-  };
+  // const convertToFormData = (data: z.infer<typeof ProductSchema>) => {
+  //   const formData = new FormData();
+  //   for (const key in data) {
+  //     formData.append(key, data[key as keyof typeof data] as string);
+  //   }
+  //   images.forEach((image) => {
+  //     formData.append("images", image);
+  //   });
+  //   return formData;
+  // };
+  const { createProduct } = productsService();
 
   const onSubmit = async (data: z.infer<typeof ProductSchema>) => {
     setIsLoading(true);
+    console.log(data);
     try {
-      const formData = convertToFormData(data);
-      const res = await fetch("api/products", {
-        method: "POST",
-        body: formData,
-      });
-      if (!res.ok) {
-        throw new Error("Error al enviar el producto");
-      }
-      const result = await res.json();
-      console.log("Producto enviado: ", result);
-      setShowSuccessDialog(true);
-      setTimeout(() => {
-        setShowSuccessDialog(false);
-      }, 3000);
+      await createProduct(data);
       form.reset();
       setImages([]);
       setImagePreviewUrls([]);
@@ -132,6 +122,11 @@ const ProductForm = () => {
       console.error("Error al enviar el producto", error);
     } finally {
       setIsLoading(false);
+      setShowSuccessDialog(true);
+      setTimeout(() => {
+        setShowSuccessDialog(false);
+      }, 3000);
+      form.reset();
     }
   };
 
@@ -261,7 +256,7 @@ const ProductForm = () => {
             <div className="flex-none space-y-6">
               <FormField
                 control={form.control}
-                name="image"
+                name="images"
                 render={({ field }) => (
                   <FormItem>
                     <FormControl>
@@ -369,7 +364,7 @@ const ProductForm = () => {
               />
               <FormField
                 control={form.control}
-                name="tags"
+                name="tag"
                 render={({ field }) => (
                   <FormItem className="flex-1">
                     <FormControl>
