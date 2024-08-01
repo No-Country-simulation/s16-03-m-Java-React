@@ -14,7 +14,9 @@ type Props = {
 };
 const DashboardLayout = ({ children }: Props) => {
   const pathName = usePathname();
-  const showSidebar = pathName !== "/dashboard/templates/editor";
+  const showSidebar = !pathName.match(/^\/dashboard\/editor\/\w+/);
+
+  console.log("showSidebar=>", showSidebar);
 
   return (
     <>
@@ -23,7 +25,7 @@ const DashboardLayout = ({ children }: Props) => {
         className="relative top-20 md:top-16"
         variant={showSidebar ? "width_sidebar" : "simple"}
       >
-        <Sidebar />
+        {showSidebar && <Sidebar />}
         <Layout asChild variant={!showSidebar ? "simple" : "default"}>
           <main>{children}</main>
         </Layout>
