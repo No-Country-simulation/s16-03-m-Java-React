@@ -1,5 +1,7 @@
 "use client";
 
+import { useEffect } from "react";
+
 import { ArrowLeft } from "lucide-react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
@@ -12,15 +14,31 @@ import Images from "@/modules/dashboard/editor/components/images";
 import Products from "@/modules/dashboard/editor/components/products";
 import Templates from "@/modules/dashboard/editor/components/templates";
 import Videos from "@/modules/dashboard/editor/components/videos";
+import { TemplateType } from "@/modules/dashboard/templates/types";
 import banner from "@/public/images/banner.png";
 import section from "@/public/images/section.png";
+import { useGenericStore } from "@/store/use.store";
 
-const EditorPage = () => {
+type Props = {
+  data: TemplateType;
+};
+
+const EditorPage = ({ data }: Props) => {
+  const { setActiveSidebar, activeSidebar } = useGenericStore((state) => state);
+
+  useEffect(() => {
+    setActiveSidebar(false);
+  }, []);
+
+  console.log("activeSidebar=>", activeSidebar);
+
   const router = useRouter();
 
   const handleGoBack = () => {
     router.back();
   };
+
+  const date = data.name;
 
   return (
     <>

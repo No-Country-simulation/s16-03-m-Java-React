@@ -1,6 +1,6 @@
 import "server-only";
 
-import { SignJWT, jwtVerify } from "jose";
+import { SignJWT, jwtVerify, JWTPayload } from "jose";
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 
@@ -23,7 +23,9 @@ export async function encrypt(payload: SessionPayload) {
     .sign(key);
 }
 
-export async function decrypt(session: string | undefined = "") {
+export async function decrypt(
+  session: string | undefined = ""
+): Promise<JWTPayload | null> {
   try {
     const { payload } = await jwtVerify(session, key, {
       algorithms: ["HS256"],
