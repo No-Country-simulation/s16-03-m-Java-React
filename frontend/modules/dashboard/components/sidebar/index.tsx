@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
@@ -12,17 +13,18 @@ import {
 } from "@/components/ui/accordion";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import Logowhite from "@/public/images/Logowhite.png";
 
 const Sidebar = () => {
   const pathName: string = usePathname();
 
+  const shouldShowSidebar = pathName !== "/dashboard/templates/editor";
+
+  if (!shouldShowSidebar) return null;
+
   return (
-    <aside className="bg-primary-background sticky top-0 h-screen px-6 py-10">
+    <aside className="bg-primary-background sticky top-0 hidden h-screen px-6 py-10 md:block">
       <div className="grid gap-4">
-        {/* {sidebarLinks.length > 0 &&
-          sidebarLinks.map((link: SidebarLinkType, index: number) => (
-            <Item key={`sidebar-item-${index}`} data={link} />
-          ))} */}
         {sidebarLinks?.length > 0 ? (
           <nav className="flex flex-col gap-2">
             {sidebarLinks?.map((item: SidebarLinkType, index: number) =>
@@ -41,6 +43,16 @@ const Sidebar = () => {
                       )}
                     >
                       <div className="flex items-center justify-start">
+                        <div className="mr-2 h-6 w-6 flex-shrink-0">
+                          {pathName === item.url && (
+                            <Image
+                              src={Logowhite}
+                              width={24}
+                              height={24}
+                              alt="Logo Cosmos"
+                            />
+                          )}
+                        </div>
                         {item.title}
                       </div>
                     </AccordionTrigger>
@@ -62,7 +74,19 @@ const Sidebar = () => {
                               }`
                             )}
                           >
-                            {child.title}
+                            <div className="flex items-center justify-start">
+                              <div className="mr-2 h-6 w-6 flex-shrink-0">
+                                {pathName === child.url && (
+                                  <Image
+                                    src={Logowhite}
+                                    width={24}
+                                    height={24}
+                                    alt="Logo Cosmos"
+                                  />
+                                )}
+                              </div>
+                              {child.title}
+                            </div>
                           </Link>
                         ))}
                       </div>
@@ -84,7 +108,19 @@ const Sidebar = () => {
                       }`
                     )}
                   >
-                    {item.title}
+                    <div className="flex items-center justify-start">
+                      <div className="mr-2 h-6 w-6 flex-shrink-0">
+                        {pathName === item.url && (
+                          <Image
+                            src={Logowhite}
+                            width={24}
+                            height={24}
+                            alt="Logo Cosmos"
+                          />
+                        )}
+                      </div>
+                      {item.title}
+                    </div>
                   </Link>
                 )
               )

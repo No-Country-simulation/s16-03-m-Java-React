@@ -1,10 +1,10 @@
 import Init from "@/modules/dashboard/init";
 
-const Dashboard = () => {
+const Dashboard = async () => {
   return (
-    <div>
+    <>
       <Init />
-    </div>
+    </>
   );
 };
 

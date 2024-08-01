@@ -6,7 +6,7 @@ import { usePathname } from "next/navigation";
 import { SidebarLinkType } from "../data";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import LogoWhite from "@/public/images/LogoWhite.png";
+import Logowhite from "@/public/images/Logowhite.png";
 
 type Props = {
   data: SidebarLinkType;
@@ -32,7 +32,7 @@ const Item = ({ data }: Props) => {
       {isActive && (
         <Image
           className="absolute left-8 top-1/2 mt-1 h-8 w-8 -translate-y-1/2"
-          src={LogoWhite}
+          src={Logowhite}
           alt="logo white"
         />
       )}

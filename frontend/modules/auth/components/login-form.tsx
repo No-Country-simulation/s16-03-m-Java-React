@@ -1,102 +1,56 @@
 "use client";
 
-import { zodResolver } from "@hookform/resolvers/zod";
 import Link from "next/link";
-import { useForm } from "react-hook-form";
-import { z } from "zod";
+import { useFormState } from "react-dom";
 
 import SocialMediaButtons from "./social-media-button";
-import { LoginSchema } from "../schemas";
-import { Button } from "@/components/ui/button";
-import {
-  Form,
-  FormControl,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-} from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { loginAction } from "@/modules/auth/actions/auth";
+import { LoginButton } from "@/modules/auth/components/login-button";
 
 const LoginForm = () => {
-  const form = useForm<z.infer<typeof LoginSchema>>({
-    resolver: zodResolver(LoginSchema),
-    defaultValues: {
-      email: "",
-      password: "",
-    },
-  });
-
-  function onSubmit(data: z.infer<typeof LoginSchema>) {
-    console.log(data);
-  }
+  const [state, action] = useFormState(loginAction, undefined);
 
   return (
     <div className="flex w-full max-w-[424px] flex-col px-4 lg:px-0">
       <div className="mb-12 w-full">
         <h1 className="text-3xl font-bold">Bienvenido!</h1>
       </div>
-      <Form {...form}>
-        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
-          <div className="grid">
-            <div className="w-full space-y-6">
-              <FormField
-                control={form.control}
-                name="email"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>E-mail </FormLabel>
-                    <FormControl>
-                      <Input
-                        className="bg-muted "
-                        placeholder="Escribe tu e-mail"
-                        type="name"
-                        {...field}
-                      />
-                    </FormControl>
-
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-              <FormField
-                control={form.control}
-                name="password"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Contraseña</FormLabel>
-                    <FormControl>
-                      <Input
-                        className="bg-muted"
-                        placeholder="Escribe tu contraseña"
-                        type="password"
-                        {...field}
-                      />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-            </div>
-            <Button
-              asChild
-              variant="link"
-              className="ml-auto mt-2 p-0 text-[13px]"
-            >
-              <Link href="#">Olvidaste tu contraseña?</Link>
-            </Button>
+      <form action={action}>
+        <div className="flex flex-col gap-2">
+          <div className="space-y-2">
+            <Label htmlFor="email">E-mail</Label>
+            <Input
+              id="email"
+              name="email"
+              className="bg-muted"
+              placeholder="Ingresa tu e-mail"
+              type="email"
+            />
+            {state?.errors?.email && (
+              <p className="text-sm text-red-500">{state.errors.email}</p>
+            )}
           </div>
-          <div className="flex justify-center">
-            <Button
-              type="submit"
-              size="lg"
-              className="mx-auto w-full rounded-full"
-            >
-              Ingresar
-            </Button>
+          <div className="mt-4 space-y-2">
+            <Label htmlFor="password">Contraseña</Label>
+            <Input
+              id="password"
+              className="bg-muted "
+              type="password"
+              placeholder="Ingresa tu contraseña"
+              name="password"
+            />
+            {state?.errors?.password && (
+              <p className="text-sm text-red-500">{state.errors.password}</p>
+            )}
           </div>
-        </form>
-      </Form>
+          {state?.message && (
+            <p className="text-sm text-red-500">{state.message}</p>
+          )}
+          <LoginButton />
+        </div>
+      </form>
       <SocialMediaButtons />
       <p className="text-foreground mt-10 text-center text-sm">
         ¿Todavía no tenés cuenta?

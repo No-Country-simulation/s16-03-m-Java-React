@@ -10,16 +10,12 @@ const sidebarLinks: SidebarLinkType[] = [
     url: "/dashboard",
   },
   {
-    title: "Estadísticas",
-    url: "/dashboard/statistics",
-  },
-  {
     title: "Productos",
     children: [
-      {
-        title: "Todos los productos",
-        url: "/dashboard/products",
-      },
+      // {
+      //   title: "Todos los productos",
+      //   url: "/dashboard/products",
+      // },
       {
         title: "Añadir productos",
         url: "/dashboard/products/add",
@@ -29,6 +25,18 @@ const sidebarLinks: SidebarLinkType[] = [
         url: "/dashboard/products/published",
       },
     ],
+  },
+  {
+    title: "Grupos",
+    url: "/dashboard/groups",
+  },
+  {
+    title: "Mis webs",
+    url: "/dashboard/webs",
+  },
+  {
+    title: "Estadísticas",
+    url: "/dashboard/statistics",
   },
   {
     title: "Tutoriales",

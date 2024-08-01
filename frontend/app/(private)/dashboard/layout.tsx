@@ -1,29 +1,21 @@
 import { ReactNode } from "react";
 
-import { Layout } from "@/components/layouts";
-import Header from "@/modules/dashboard/components/header";
-import Sidebar from "@/modules/dashboard/components/sidebar";
-import Footer from "@/modules/marketing/components/footer-landing";
-import { poppins } from "@/styles/font";
+import AuthProvider from "@/app/(private)/dashboard/provider";
+import { DashboardLayout } from "@/components/layouts";
+import { getUser } from "@/modules/auth/actions";
 
 type Props = {
   children: ReactNode;
 };
 
-const RootLayout = ({ children }: Props) => {
+const RootLayout = async ({ children }: Props) => {
+  const user = await getUser();
+
   return (
-    <html lang="en">
-      <body className={poppins.className}>
-        <Header />
-        <Layout variant="width_sidebar">
-          <Sidebar />
-          <Layout asChild>
-            <main>{children}</main>
-          </Layout>
-        </Layout>
-        <Footer />
-      </body>
-    </html>
+    <>
+      <AuthProvider user={user} />
+      <DashboardLayout>{children}</DashboardLayout>
+    </>
   );
 };
 
